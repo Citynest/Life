@@ -1,0 +1,258 @@
+/* inter-regular - latin */
+* {
+  padding: 0;
+  margin: 0;
+  font-style: normal;
+  src: local(''),
+    url('../inter-v11-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../inter-v11-latin-regular.woff') format('woff');
+}
+body {
+  background-image: url('./imgs/StrangerThings.jpg');
+  width: 100%;
+  height: 95vh;
+}
+
+
+
+
+
+
+
+/* =========================== Portal ===================== */
+nav {
+  --duration: .5s;
+  --easing: ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 220px;
+  margin: 20px;
+}
+
+nav ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: -4px 0 0 0;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  transform-origin: 0 0;
+  transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
+  transition-delay: var(--delay-out);
+  border-radius: 4px;
+  padding: 1em 1.52em;
+}
+
+nav a:hover {
+  background: #efefef;
+}
+
+nav .sub-menu a {
+  font-size: .9em;
+  color: #666666;
+  border-left: 2em solid white;
+  padding: .75em;
+  background: linear-gradient(to right, #dddddd 2px, #ffffff 2px);
+}
+
+nav .sub-menu a:hover {
+  background: linear-gradient(to right, #dddddd 2px, #efefef 2px);
+}
+
+nav header {
+  font-weight: 600;
+  display: block;
+  background: rgba(255, 255, 255, 0.5);
+  transform-origin: 0 0;
+  transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
+  transition-delay: var(--delay-out);
+  border-radius: 4px;
+  padding: 1em 1.52em;
+}
+
+nav header span {
+  border: none;
+  background: transparent;
+  font-size: 1.5em;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1;
+  float: right;
+}
+
+nav footer button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  padding: calc(1em - 2px);
+  width: 100%;
+  transform-origin: 0 0;
+  transition: transform var(--duration) var(--easing);
+  transition-delay: calc(var(--duration) + (.1s * (var(--count) / 2)));
+  cursor: pointer;
+  outline: none;
+  background: #cdcdcd;
+  opacity: 0;
+}
+
+nav.closed a,
+nav.closed header {
+  transform: translateY(calc(var(--top) * -1)) scaleY(0.1) scaleX(0.2);
+  transition-delay: var(--delay-in);
+  color: transparent;
+}
+
+nav.closed footer button {
+  transition-delay: 0s;
+  transform: scaleY(0.7) scaleX(0.2);
+}
+
+
+h1 {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+}
+
+li {
+  color: white;
+}
+
+.gspot {
+  color: white;
+  text-align: center;
+}
+
+.canvastxt {
+  color: white;
+  position: fixed;
+  padding-left: 570px;
+}
+
+.canvastxt p {
+  padding-left: 25px;
+}
+
+#null {
+  background-color: rgb(61, 133, 39);
+  background-image: none;
+}
+
+.deals {
+  color: brown;
+  text-align: center;
+}
+
+#pure {
+  color: lawngreen;
+}
+
+#sync {
+  color: yellowgreen;
+  padding-right: 85px;
+}
+
+p {
+  color: white;
+}
+
+p a {
+  color: red;
+}
+
+.w-text {
+  color: white;
+}
+
+#triggerScan {
+  height: 14px;
+  width: 15px;
+}
+
+.mouse-cursor-gradient-tracking {
+  position: relative;
+  background: #8aac2e;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+}
+
+.mouse-cursor-gradient-tracking span {
+  position: relative;
+}
+
+.mouse-cursor-gradient-tracking:before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, red, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.mouse-cursor-gradient-tracking:hover:before {
+  --size: 200px;
+}
+
+
+.w3rcontainer {
+  border: 1px solid #cccfdb;
+  border-radius: 2px;
+}
+
+.image-card {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 1rem;
+  width: 240px;
+  height: 320px;
+  padding: 8px;
+  border-radius: 1rem;
+  background: url("https://www.w3resource.com/html-css-exercise/html-css-practical-exercises/flower-2.jpeg");
+  box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.perspective-left {
+  transform: perspective(1500px) rotateY(15deg);
+  transition: transform 1s ease 0s;
+}
+
+.perspective-left:hover {
+  transform: perspective(3000px) rotateY(5deg);
+}
+
+.perspective-right {
+  transform: perspective(1500px) rotateY(-15deg);
+  transition: transform 1s ease 0s;
+}
+
+.perspective-right:hover {
+  transform: perspective(3000px) rotateY(-5deg);
+}
+
+/* Nav ends here */
+
+
+/*signed by Starlink*/

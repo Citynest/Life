@@ -1,0 +1,176 @@
+<!---health news page-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../../styles/imgs/mylg.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles/auth.css">
+    <title>My bubble</title>
+
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGQ0H1X7YW"></script>
+    <script src="../../scripts/gtag.js"></script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <div class="container">
+        <form class="login-form" name="form" style="padding-top: 1060px;">
+            <h2>Introduce yourself first to actively manage your live account:</h2>
+            <!--- Getting to know the user fields here --->
+            <P>=====PAGE UNDER DEVELOPMENT=======</P>
+            <p>Profile picture</p><input name="profilePic" id="profilePic" type="file" accept="image/*;capture=camera">
+            <p>Date of birth</p>
+            <input name="birthdate" id="dob" type="date"><br><br><input id="age" name="age" type="number"
+                placeholder="Age">
+
+            <p>Identity Card number/ Social security number <input name="SSN" id="SSN" type="text"></p>
+            <p>What is your current life's status now? <select name="occupation" id="occupation">
+                    <option value="" selected>I am a...</option>
+                    <option value=""></option>
+                    <option value="Student">Student</option>
+                    <option value="Hustler">Hustler</option>
+                    <option value="Freelancer">Freelancer</option>
+                    <option value="Entreprenuer">Entreprenuer</option>
+                    <option value="Cleaner">Cleaner</option>
+                    <option value="Guard">Guard</option>
+                    <option value="Entry level">Entry level</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Builder">Builder</option>
+                    <option value="C-Suite">C-Suite</option>
+                    <option value="Vice Presidents & directors">Vice Presidents & directors</option>
+                    <option value="Individual contributer">Individual contributer</option>
+                    <option value="Board of Directors">Board of Directors</option>
+                </select></p>
+            <p>What do you do on your free time for fun/ relaxation? <input name="hobbies" id="hobbies" type="text"
+                    placeholder="Your hobbies"></p>
+            <p>Do you require free/ cheap medical care periodlically or are you assigned to a private hospital service?
+                <br><br><select>
+                    <option id="healthPlan" value="" selected></option>
+                    <option value="Public health care">Public health care system</option>
+                    <option value="Private health care">Private health care system</option>
+                </select> <br><br>(used to recommend other better & relavant services based on your current plan &
+                location)
+            </p>
+            <p>What are your life's ambitions? <input name="myDreams" id="dreams" type="text"></p>
+            <h3>My online social life in a nutshell</h3>
+            <p> <input name="twitter" id="peaceWasNeverAnOption" type="url" placeholder="Twitter profile URL"></p>
+            <p> <input name="instagram" id="cloutIsCallingMe" type="url" placeholder="Instagram profile URL"></p>
+            <p> <input name="facebook" id="theGhettoSocialites" type="url" placeholder="Facebook profile URL"></p>
+            <p> <input name="Whatsapp" id="the_creeps" type="url" placeholder="WhatsApp profile URL"></p>
+            <p> <input name="linkedin" id="greedyNiggas" type="url" placeholder="LinkedIn profile URL"></p>
+            <p> <input name="blog" id="coolKids" type="url" placeholder="my website/ blog profile URL"></p>
+            <strong>
+                <p>Keep my account information private:
+            </strong><select>
+                <option id="terms&conditions" value=""></option>
+                <option value="Yes">Yes</option>
+                <option value="No" selected>No</option>
+            </select> default (No)</p>
+
+            <button id="aboutMe" name="aboutMe" type="button" class="mouse-cursor-gradient-tracking"
+                onclick="thenewcallout2()">Upload & sync data</button>
+    </div>
+
+
+    <!--- loading screen section ---->
+    <div class="div2">
+        <div class="login-form">
+            <link rel="stylesheet" href="../../styles/loggedUp.css">
+            <p>Account customization is ongoin...</p>
+            <p>Your information is being encrypted: ETA 12hrs < 7 days </p>
+                    <div class="blocks" style="height: 50px;">
+                        <div class="block orange"></div>
+                        <div class="block blue"></div>
+                    </div><br><br><button class="mouse-cursor-gradient-tracking" onclick="thenewcallout3()">Exit to
+                        home</button>
+        </div>
+    </div>
+
+    <!---- Banking Details ---->
+    <div class="fixAcc">
+        <h1>My banking details</h1>
+        <p>The name of your bank: <input type="text"></p>
+        <p>Card type <select>
+                <option value="" selected></option>
+                <option value="Visa">Visa</option>
+                <option value="MasterCard">MasterCard</option>
+                <option value="American Express">American Express</option>
+            </select></p>
+        <p>Card number <input type="number"></p>
+        <p>Expiry date <input type="date"></p>
+        <p>CVC <input type="number" maxlength="3"></p><br>
+        <button class="mouse-cursor-gradient-tracking">Intergrate card with your profile</button>
+    </div>
+    </form>
+
+
+    <!--- Portal --->
+    <nav class="menu">
+        <header>Standard tier<span>[X]</span></header>
+        <ol>
+            <li class="menu-item"><span id="user_Dp">
+                    <div>
+                        <a href="#"><img src="../../styles/imgs/user.png" alt="up" width="25px" height="25px" />
+                </span><span id="username">user</span></a></div>
+            </li>
+            <li class="menu-item">
+                <a href="#" onclick="history.back()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                    height="5px">Go back</a>
+            </li>
+            <ol class="sub-menu">
+                <li class="menu-item">
+                    <a href="#" onclick="pageStatus()">Social networking</a>
+                </li>
+                <li class="menu-item">
+                    <a href="../free/spaza-shop.html" onclick="pageStatus()">Self care</a>
+                </li>
+                <li class="menu-item">
+                    <a href="./explore.html" onclick="pageStatus()">Entertainment</a>
+                </li>
+            </ol>
+            </li>
+            <ol class="sub-menu">
+                <li class="menu-item">
+                    <a href="#" onclick="pageStatus()">Productivity</a>
+                </li>
+            </ol>
+
+            <li class="menu-item">
+                <a href="#" id="killSwitch"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                        height="5px">Sign out</a>
+            </li>
+            <li class="menu-item">
+                <a href="../free/sponsors.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                        height="5px">Sponsors</a>
+            </li>
+            <ol class="sub-menu">
+                <li class="menu-item"><a href="#" onclick="pageStatus()">Upgrade class</a></li>
+                <li class="menu-item"><a href="../free/Updates.html"><img src="../../styles/imgs/online.png"
+                            alt="page online" width="5px" height="5px">Portal updates</a></li>
+            </ol>
+            <li class="menu-item">
+                <a href="#" onclick="pageStatus()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                        height="5px">Talk to the developer</a>
+            </li>
+        </ol>
+        <footer><button aria-label="Toggle Menu">Toggle</button></footer>
+    </nav>
+
+
+
+    <script src="../../scripts/1.js"></script>
+    <script src="../../scripts/2.js"></script>
+    <script src="../../scripts/wtf.js"></script>
+
+
+    <!--- Firebase 
+    <script src="../../scripts/heartBeat.js" type="module"></script>--->
+
+    <!--- Firebase Devmode--->
+    <script src="../../scripts/heartBeat2.0.js" type="module"></script>
+</body>
+
+</html>
