@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
 
 import {
   getDatabase,
@@ -8,13 +8,13 @@ import {
   query,
   orderByChild,
   connectDatabaseEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
 
 import {
   getAuth,
   onAuthStateChanged,
   connectAuthEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
 
 // Your web app's Firebase configuration
 

@@ -1,12 +1,12 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
 
 import {
   getAuth,
   onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/9.9.1/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
 
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-database.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
 
 // Your web app's Firebase configuration
 

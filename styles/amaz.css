@@ -15,9 +15,140 @@ body {
 }
 
 
+h1 {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+}
+
+li {
+  color: white;
+}
+
+.gspot {
+  color: white;
+  text-align: center;
+}
+
+.canvastxt {
+  color: white;
+  position: fixed;
+  padding-left: 570px;
+}
+
+.canvastxt p {
+  padding-left: 25px;
+}
+
+#null {
+  background-color: rgb(61, 133, 39);
+  background-image: none;
+}
+
+.deals {
+  color: brown;
+  text-align: center;
+}
+
+#pure {
+  color: lawngreen;
+}
+
+#sync {
+  color: yellowgreen;
+  padding-right: 85px;
+}
+
+p {
+  color: white;
+}
+
+p a {
+  color: red;
+}
+
+.w-text {
+  color: rgb(17, 248, 248);
+}
+
+#triggerScan {
+  height: 14px;
+  width: 15px;
+}
+
+.mouse-cursor-gradient-tracking {
+  position: relative;
+  background: #8aac2e;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+}
+
+.mouse-cursor-gradient-tracking span {
+  position: relative;
+}
+
+.mouse-cursor-gradient-tracking:before {
+  --size: 0;
+  content: '';
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, red, transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.mouse-cursor-gradient-tracking:hover:before {
+  --size: 200px;
+}
 
 
+.w3rcontainer {
+  border: 1px solid #cccfdb;
+  border-radius: 2px;
+}
 
+.image-card {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 1rem;
+  width: 240px;
+  height: 320px;
+  padding: 8px;
+  border-radius: 1rem;
+  background: url("https://www.w3resource.com/html-css-exercise/html-css-practical-exercises/flower-2.jpeg");
+  box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.perspective-left {
+  transform: perspective(1500px) rotateY(15deg);
+  transition: transform 1s ease 0s;
+}
+
+.perspective-left:hover {
+  transform: perspective(3000px) rotateY(5deg);
+}
+
+.perspective-right {
+  transform: perspective(1500px) rotateY(-15deg);
+  transition: transform 1s ease 0s;
+}
+
+.perspective-right:hover {
+  transform: perspective(3000px) rotateY(-5deg);
+}
 
 
 /* =========================== Portal ===================== */
@@ -116,143 +247,6 @@ nav.closed footer button {
   transform: scaleY(0.7) scaleX(0.2);
 }
 
-
-h1 {
-  color: white;
-  font-size: 2em;
-  text-align: center;
-}
-
-h3 {
-  color: white;
-}
-
-li {
-  color: white;
-}
-
-.gspot {
-  color: white;
-  text-align: center;
-}
-
-.canvastxt {
-  color: white;
-  position: fixed;
-  padding-left: 570px;
-}
-
-.canvastxt p {
-  padding-left: 25px;
-}
-
-#null {
-  background-color: rgb(61, 133, 39);
-  background-image: none;
-}
-
-.deals {
-  color: brown;
-  text-align: center;
-}
-
-#pure {
-  color: lawngreen;
-}
-
-#sync {
-  color: yellowgreen;
-  padding-right: 85px;
-}
-
-p {
-  color: white;
-}
-
-p a {
-  color: red;
-}
-
-.w-text {
-  color: white;
-}
-
-#triggerScan {
-  height: 14px;
-  width: 15px;
-}
-
-.mouse-cursor-gradient-tracking {
-  position: relative;
-  background: #8aac2e;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  border: none;
-  color: white;
-  cursor: pointer;
-  outline: none;
-  overflow: hidden;
-}
-
-.mouse-cursor-gradient-tracking span {
-  position: relative;
-}
-
-.mouse-cursor-gradient-tracking:before {
-  --size: 0;
-  content: '';
-  position: absolute;
-  left: var(--x);
-  top: var(--y);
-  width: var(--size);
-  height: var(--size);
-  background: radial-gradient(circle closest-side, red, transparent);
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease;
-}
-
-.mouse-cursor-gradient-tracking:hover:before {
-  --size: 200px;
-}
-
-
-.w3rcontainer {
-  border: 1px solid #cccfdb;
-  border-radius: 2px;
-}
-
-.image-card {
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 1rem;
-  width: 240px;
-  height: 320px;
-  padding: 8px;
-  border-radius: 1rem;
-  background: url("https://www.w3resource.com/html-css-exercise/html-css-practical-exercises/flower-2.jpeg");
-  box-shadow:
-      rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
-
-.perspective-left {
-  transform: perspective(1500px) rotateY(15deg);
-  transition: transform 1s ease 0s;
-}
-
-.perspective-left:hover {
-  transform: perspective(3000px) rotateY(5deg);
-}
-
-.perspective-right {
-  transform: perspective(1500px) rotateY(-15deg);
-  transition: transform 1s ease 0s;
-}
-
-.perspective-right:hover {
-  transform: perspective(3000px) rotateY(-5deg);
-}
-
 /* Nav ends here */
-
 
 /*signed by Starlink*/
