@@ -3,6 +3,7 @@
     "rules": "database.rules.json"
   },
   "hosting": {
+    "site": "citynest",
     "public": "./",
     "ignore": [
       "firebase.json",
