@@ -35,7 +35,6 @@ onValue(activeUserRef, (snapshot) => {
 });
 
 */
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -71,7 +70,7 @@ onAuthStateChanged(auth, (user) => {
     };
 
     self.addEventListener("fetch", (event) => {
-      /* @type {FetchEvent} */
+      /* @type {FetchEvent} ===========================>>>>>>>>>>>>here */
       const evt = event;
 
       const requestProcessor = (idToken) => {
@@ -127,30 +126,10 @@ onAuthStateChanged(auth, (user) => {
     console.log(user.email + " is logged in");
   } else {
     // User is signed out
-    alert("Come back again soon");
+    alert("You are logged out, please sign in/ register first");
     window.location.replace("../../offline_VS_Online/auth.html");
   }
 });
-
-const selfie = document.getElementById("profileView").value;
-updateCloud.addEventListener("click", (f) => {
-  //get your select image
-  const capturedSelfie = ref(storage, "Profile/");
-  const metadata = {
-    contentType: "image/jpeg",
-  };
-
-  uploadBytes(capturedSelfie, selfie, metadata).then((snapshot) => {
-    alert("Well done!");
-  });
-});
-
-// Create a reference to 'mountains.jpg'
-// const mountainsRef = ref(storage, "mountains.jpg");
-
-// While the file names are the same, the references point to different files
-// mountainsRef.name === mountainImagesRef.name; // true
-// mountainsRef.fullPath === mountainImagesRef.fullPath; // false
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
@@ -193,11 +172,10 @@ uploadString();
 
 
 */
-
 const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
   f.preventDefault();
   auth.signOut().then(() => {
-    alert("Come back again soon!");
+    window.location.replace("../../Home.html");
   });
 });

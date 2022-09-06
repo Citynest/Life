@@ -119,7 +119,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../star/free/main.html");
+          window.location.replace("../star/free/my-vault.html");
         })
         .catch((error) => {
           // The write failed...
