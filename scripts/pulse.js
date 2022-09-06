@@ -36,26 +36,6 @@ onValue(activeUserRef, (snapshot) => {
 
 */
 
-// Create a reference to 'mountains.jpg'
-// const mountainsRef = ref(storage, "mountains.jpg");
-
-// While the file names are the same, the references point to different files
-// mountainsRef.name === mountainImagesRef.name; // true
-// mountainsRef.fullPath === mountainImagesRef.fullPath; // false
-
-updateCloud.addEventListener("click", (f) => {
-  //get your select image
-  const selfie = document.getElementById("profileView").value;
-  const capturedSelfie = ref(storage, "Profile/");
-  const metadata = {
-    contentType: "image/jpeg",
-  };
-
-  uploadBytes(capturedSelfie, selfie, metadata).then((snapshot) => {
-    alert("Well done!");
-  });
-});
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -151,6 +131,26 @@ onAuthStateChanged(auth, (user) => {
     window.location.replace("../../offline_VS_Online/auth.html");
   }
 });
+
+const selfie = document.getElementById("profileView").value;
+updateCloud.addEventListener("click", (f) => {
+  //get your select image
+  const capturedSelfie = ref(storage, "Profile/");
+  const metadata = {
+    contentType: "image/jpeg",
+  };
+
+  uploadBytes(capturedSelfie, selfie, metadata).then((snapshot) => {
+    alert("Well done!");
+  });
+});
+
+// Create a reference to 'mountains.jpg'
+// const mountainsRef = ref(storage, "mountains.jpg");
+
+// While the file names are the same, the references point to different files
+// mountainsRef.name === mountainImagesRef.name; // true
+// mountainsRef.fullPath === mountainImagesRef.fullPath; // false
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
