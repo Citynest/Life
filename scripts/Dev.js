@@ -25,13 +25,7 @@ import {
 // Define firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
-  authDomain: "web3-44ce7.firebaseapp.com",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
-  projectId: "web3-44ce7",
-  storageBucket: "web3-44ce7.appspot.com",
-  messagingSenderId: "162620951739",
-  appId: "1:162620951739:web:634d6f375b357004eced9e",
-  measurementId: "G-ZGQ0H1X7YW",
 };
 
 // Initialize Firebase
@@ -93,13 +87,13 @@ submitLogin.addEventListener("click", (b) => {
   signInWithEmailAndPassword(auth, avatar, secretKey)
     .then((userCredential) => {
       // logged in
-      const user = userCredential.user;
-      // ...
-
+      const user = userCredential.user.uid;
+      const databaseOrganiser = "<<==================================>>";
       const lgdate = new Date();
 
       update(ref(database, "users/" + user.uid), {
         Last_login: lgdate,
+        styler: databaseOrganiser,
       })
         .then(() => {
           // Data saved successfully!
@@ -145,6 +139,7 @@ submitReset.addEventListener("click", (c) => {
     .then(() => {
       // Password reset email sent!
       // ..
+      c.preventDefault();
       alert("Check your email for a link to your account recovery");
     })
     .catch((error) => {

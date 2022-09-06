@@ -44,7 +44,20 @@ function alwaysDown() {
     window.location.replace("../../welcome.html");
   } */
 
+function homeBase() {
+  document.querySelector(".landing-pg").style.display = "block";
+  document.querySelector(".selfCare").style.display = "none";
+  document.querySelector(".entertainment").style.display = "none";
+}
+
 function where2() {
   document.querySelector(".landing-pg").style.display = "none";
   document.querySelector(".selfCare").style.display = "block";
+  document.querySelector(".entertainment").style.display = "none";
+}
+
+function funTime() {
+  document.querySelector(".entertainment").style.display = "block";
+  document.querySelector(".landing-pg").style.display = "none";
+  document.querySelector(".selfCare").style.display = "none";
 }

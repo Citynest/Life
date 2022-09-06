@@ -4,56 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online tuck Shop</title>
+    <title>My vault</title>
     <link rel="stylesheet" href="../../styles/amaz.css" />
     <link rel="icon" type="image/x-icon" href="../../styles/imgs/mylg.ico" />
   </head>
-
   <body>
-    <center>
-      <h1>Welcome to the spaza shop</h1>
-      <h3>Great deals are coming your way! hang in there💖</h3>
-      <input type="text" placeholder="Wild search" id="scan" /><button
-        onclick="pageStatus()"
-      >
-        search
-      </button>
-      <br /><br />
-
-      <div>
-        <p>
-          TIP: Everything you buy/ acquire will show up in your inventory (money
-          goes to your wallet)
-        </p>
-        <p>Anything you need, we got it, if we dont someone in here has it!</p>
-        <p>
-          <button><img src="" alt="" /><br />Transportation</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Clothes</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Foods & toiletry</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Gadgets</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Furniture</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Pharmacy</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Internet bundles</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Airtime</button>
-        </p>
-        <p>
-          <button><img src="" alt="" /><br />Donate</button>
-        </p>
-      </div>
+    <center style="color: white">
+      <h2>
+        Your vault is empty, upload some files to access them anywhere on the
+        portal
+      </h2>
+      <br />
+      <p>
+        Select an image Name
+        <input
+          type="file"
+          accept="image/*"
+          onchange="loadFile(event)"
+          id="profileView"
+        /><br />
+        <img id="output" height="100px" width="100px" alt="preview" />
+        <script>
+          var loadFile = function (event) {
+            var output = document.getElementById("output");
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function () {
+              // URL.revokeObjectURL(output.src);  free memory
+            };
+          };
+        </script>
+        <br />universal uploader
+        <input type="file" />
+      </p>
+      <p><button id="updateCloud">Save</button></p>
+      <br />
+      <p>
+        Your vault has a free space of 50mb for anything digital, you can also
+        save tangible objects to track their whereabouts, share them, gift
+        someone or even sell them
+      </p>
+      <br />
+      <p>
+        Supported digital file types => jpg, png, jpeg, pdf, zip, mp3, mp4, exe,
+        msi, txt, docx, iso, apk (and others)
+      </p>
     </center>
 
     <!---Portal--->
@@ -61,7 +55,7 @@
       <header>Free room <span>[X]</span></header>
       <ol>
         <li class="menu-item">
-          <a href="#" onclick="pageStatus()"
+          <a href="../standard/meTime.html"
             ><img
               src="../../styles/imgs/user.png"
               alt="up"
@@ -94,21 +88,15 @@
               <a href="#" onclick="pageStatus()">Social networking</a>
             </li>
             <li class="menu-item">
-              <a href="#"
-                ><img
-                  src="../../styles/imgs/online.png"
-                  alt="page online"
-                  width="5px"
-                  height="5px"
-                />You're here</a
-              >
+              <a href="#" onclick="pageStatus()">Self care</a>
             </li>
             <li class="menu-item">
               <a href="#" onclick="pageStatus()">Entertainment</a>
             </li>
             <li class="menu-item">
-              <a href="#" onclick="pageStatus()">Productivity</a>
+              <a href="../../welcome.html">Productivity</a>
             </li>
+            <li class="menu-item"></li>
           </ol>
         </li>
         <li>
@@ -122,14 +110,7 @@
           >
         </li>
         <li class="menu-item">
-          <a href="./sponsors.html"
-            ><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Sponsors</a
-          >
+          <a href="./sponsors.html">Sponsors</a>
         </li>
         <ol class="sub-menu">
           <li class="menu-item">
@@ -153,10 +134,10 @@
     <script src="../../scripts/1.js"></script>
     <script src="../../scripts/2.js"></script>
 
-    <!--- Firebase --->
-    <script src="../../scripts/pulse.js" type="module"></script>
+    <!--- Firebase--->
+    <script src="../../scripts/pulse.js" type="module"></script> 
 
     <!--- Firebase Devmode 
-    <script src="../../scripts/heartBeat2.0.js" type="module"></script>--->
+    <script src="../../scripts/heartBeat2.5.js" type="module"></script>--->
   </body>
 </html>

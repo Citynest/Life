@@ -34,26 +34,48 @@
     <br><br><br>
     <h3>It is lonely in here, connect a social platform to see your messages</h3>
     <p><img src="../../styles/imgs/blueApp.png" alt="" width="240px" height="240px" onload="selfCarePrompt()">
-    <script>
-        function selfCarePrompt() {
-          document.querySelector(".selfCare").style.display = "none";
-        }
-    </script> 
+        <script>
+            function selfCarePrompt() {
+            document.querySelector(".selfCare").style.display = "none";
+            document.querySelector(".entertainment").style.display = "none";
+            }
+        </script>
         <img src="../../styles/imgs/fb.png" alt="" width="200px" height="200px"> 
         <img src="../../styles/imgs/insta.png" alt="" width="180px" height="170px"> 
         <img src="../../styles/imgs/WA.png" alt="" width="195px" height="185px"><br> beta</p>
     </center></div>
+
+
     <div class="selfCare"><center>
         <h1>Give yourself some love and immerse attention</h1><br>
         <h3>Where are you goin? pick a place</h3><br>
-        <p><a href="./spaza-shop.html"><button>
+        <p><a href="#" onclick="pageStatus()"><button>
             <img src="../../styles/imgs/spaza.png" alt="Spaza shop" width="200px" height="200px"><br>
             Spaza shop</button></a> 
-            <a href="./Faith.html"><button>
+            <a href="#" onclick="pageStatus()"><button>
                 <img src="../../styles/imgs/faith.jpeg" alt="Faith" width="200px" height="200px"><br>
-                Faith</button></a></p>
-    </center></div><br><br><br>
-    <p style="color: rgba(215, 253, 0, 0.986);">Coins: 0 || Inventory capaity: 2kb/50mb used || Security: None</p>
+                Faith</button></a></p><p><a href="./my-vault.html"><img src="../../styles/imgs/vault.png" alt=""><br>My inventory</a></p>
+    </center></div>
+
+
+    <div class="entertainment"><center>
+        <h1>A little something for everyone</h1><br>
+        <h3>Here are a few suggestions to entertain yourself with</h3><br>
+        <p><a href="#" onclick="pageStatus()">
+            <img src="../../styles/imgs/musicLink.png" alt="Music" width="200px" height="200px"></a> <a href="#" onclick="pageStatus()">
+                <img src="../../styles/imgs/cinema.png" alt="Movies/ Series" width="200px" height="200px"></a> 
+                <a href="#" onclick="pageStatus()">
+                    <img src="../../styles/imgs/love.png" alt="Romance" width="200px" height="200px"></a>
+            <a href="#" onclick="pageStatus()">
+                <img src="../../styles/imgs/funtime.png" alt="Fun events" width="200px" height="200px"></a></p>
+                <p><a href="#" onclick="pageStatus()"><img src="../../styles/imgs/gameTime.png" alt="My games" width="200px" height="200px">
+                </a></p><br>
+                <p>Not enough for you? there are more exciting things to do in life</p>
+                <p>We are still gathering them for you hang tight...</p>
+    </center></div>
+
+
+    <p style="color: rgba(215, 253, 0, 0.986);">Coins: 0 || Inventory capacity: 2kb/50mb used || Security: None</p>
 
 
 
@@ -69,13 +91,18 @@
                 <a href="./hub.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
                         height="5px">Go back</a>
             </li>
+            <li class="menu-item">
+                <a href="#" onclick="homeBase()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                        height="5px">Home</a>
+            </li>
             <ol class="sub-menu">
                 <li class="menu-item">
                     <a href="#" onclick="where2()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
                         height="5px">Self care</a>
                 </li>
                 <li class="menu-item">
-                    <a href="#" onclick="pageStatus()">Entertainment</a>
+                    <a href="#" onclick="funTime()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                        height="5px">Entertainment</a>
                 </li>
             </ol>
             </li>
@@ -90,7 +117,7 @@
                         height="5px">Sign out</a>
             </li>
             <li class="menu-item">
-                <a href="#" onclick="pageStatus()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+                <a href="./sponsors.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
                         height="5px">Sponsors</a>
             </li>
             <ol class="sub-menu">
@@ -109,11 +136,11 @@
 
     <script src="../../scripts/1.js"></script>
     <script src="../../scripts/2.js"></script>
-    <script src="../../scripts/wtf4.js"></script>
+    <script src="../../scripts/wtf1.1.js"></script>
 
     
     <!--- Firebase --->
-    <script src="../../scripts/heartBeat.js" type="module"></script>
+    <script src="../../scripts/pulse.js" type="module"></script>
 
     <!--- Firebase Devmode 
     <script src="../../scripts/heartBeat2.0.js" type="module"></script>--->
