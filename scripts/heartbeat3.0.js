@@ -19,8 +19,8 @@ import {
 import {
   getStorage,
   ref,
-  uploadBytes,
-  uploadString,
+  uploadBytesResumable,
+  getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-storage.js";
 
 // Your web app's Firebase configuration
@@ -49,10 +49,87 @@ onValue(activeUserRef, (snapshot) => {
 });
 
 */
+//const metadata = {
+//  contentType: "image/jpeg",
+//};
 
-// Create a reference to 'mountains.jpg'
-// const mountainsRef = ref(storage, "mountains.jpg");
+// ADD CLICK LISTENER TO THE BUTTON WE SELECTED
+updateCloud.addEventListener("click", (f) => {
+  // GET FILE FROM THE  FILE INPUT
+  const file = document.getElementById("profileView").files[0];
+  // MAKE A REFERNCE TO FIREBASE .
+  const storageRef = ref(storage, "images/profile.jpg");
+  // MAKE A CHILD REFERENCE . WE ARE MAKING A FOLDER  NAMED IMAGES AND ADDING THE FILE THE USER PICKED TO FIREBASE
+  //const final = storageRef.child(`images/${file}`);
+  // THIS UPLOAD THE FILE.. WE STORE IT IN A CONST TO DOWNLOAD THE THE FILE AND E.C.T
 
+  const uploadTask = uploadBytesResumable(storageRef, file); //, metadata
+
+  uploadTask.on(
+    "state_changed",
+    (snapshot) => {
+      // Observe state change events such as progress, pause, and resume
+      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+      console.log("Upload is " + progress + "% done");
+      switch (snapshot.state) {
+        case "paused":
+          console.log("Upload is paused");
+          break;
+        case "running":
+          console.log("Upload is running");
+          break;
+      }
+    },
+    (error) => {
+      // Handle unsuccessful uploads
+      alert("Something went wrong, please check your internet connection");
+    },
+    () => {
+      // Handle successful uploads on complete
+      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+      alert("Your upload is successful!");
+      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+        console.log("File available to download at: ", downloadURL);
+      });
+    }
+  );
+});
+
+/*
+updateCloud.addEventListener("click", (f) => {
+  const selfie = document.getElementById("profileView").files[0];
+  console.log(selfie);
+
+
+
+
+
+  // Create a reference to 'selfie.jpg'
+  const selfieRef = ref(storage, "/images/selfie.jpeg" + selfie.name, metadata);
+  const task = storage.put(selfieRef);
+
+  //uploadBytesResumable(selfieRef, file).then((snapshot) => {
+  //  alert("Uploaded a blob or file!");
+  //});
+
+  task.on(
+    "state_change",
+    function progress(snap) {
+      console.log((snap.bytesTransferred / snap.totalBytes) * 100);
+    },
+    function error(err) {
+      console.log(err.message);
+    },
+    function completed() {
+      storage.getDownloadURL().then((url) => {
+        let imgDisplay = document.querySelector("bucket");
+        imgDisplay.innerHTML += '<img src=${url} alt="">';
+      });
+    }
+  );
+});
+*/
 // While the file names are the same, the references point to different files
 // mountainsRef.name === mountainImagesRef.name; // true
 // mountainsRef.fullPath === mountainImagesRef.fullPath; // false
@@ -194,6 +271,15 @@ uploadString();
 
 
 */
+
+/*input.addEventListener("change", (f) => {
+	let storageRef = app.storage().ref("images/" + file.name);
+	
+	let task = storageRef.put(file);
+	task.on(
+		"state_changed", function progress(snap) {
+		let percentage = (snap.bytesTransferred/ snap.totalBytes)})}) */
+
 const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
   f.preventDefault();
