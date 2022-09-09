@@ -119,6 +119,14 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+const endSession = document.getElementById("killSwitch");
+endSession.addEventListener("click", (f) => {
+  f.preventDefault();
+  auth.signOut().then(() => {
+    window.location.replace("../../Home.html");
+  });
+});
+
 // ADD CLICK LISTENER TO THE BUTTON WE SELECTED
 updateCloud.addEventListener("click", (g) => {
   g.preventDefault();
@@ -169,12 +177,4 @@ updateCloud.addEventListener("click", (g) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
-});
-
-const endSession = document.getElementById("killSwitch");
-endSession.addEventListener("click", (f) => {
-  f.preventDefault();
-  auth.signOut().then(() => {
-    window.location.replace("../../Home.html");
-  });
 });
