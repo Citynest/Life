@@ -2,8 +2,18 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
 
 import {
+  getDatabase,
+  onValue,
+  query,
+  orderByChild,
+  connectDatabaseEmulator,
+} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
+
+import {
   getAuth,
   onAuthStateChanged,
+  reauthenticateWithCredential,
+  connectAuthEmulator,
 } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
 
 import {
@@ -23,8 +33,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
+connectAuthEmulator(auth, "http://localhost:9000");
+connectDatabaseEmulator(database, "localhost", 9100);
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
