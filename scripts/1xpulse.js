@@ -36,6 +36,15 @@ const storage = getStorage(app);
 const analytics = getAnalytics(app);
 logEvent(analytics, "notification_received");
 setUserProperties(analytics, { mostly_feels: "bored" });
+
+const endSession = document.getElementById("killSwitch");
+endSession.addEventListener("click", (f) => {
+  f.preventDefault();
+  auth.signOut().then(() => {
+    window.location.replace("../../Home.html");
+  });
+});
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -179,12 +188,4 @@ updateCloud.addEventListener("click", (g) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
-});
-
-const endSession = document.getElementById("killSwitch");
-endSession.addEventListener("click", (f) => {
-  f.preventDefault();
-  auth.signOut().then(() => {
-    window.location.replace("../../Home.html");
-  });
 });
