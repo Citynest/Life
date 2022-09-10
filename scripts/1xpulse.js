@@ -13,12 +13,19 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
 
+import {
+  getAnalytics,
+  logEvent,
+  setUserProperties,
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
   storageBucket: "web3-44ce7.appspot.com",
+  measurementId: "G-ZGQ0H1X7YW",
 };
 
 // Initialize Firebase
@@ -26,7 +33,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
-
+const analytics = getAnalytics(app);
+logEvent(analytics, "notification_received");
+setUserProperties(analytics, { mostly_feels: "bored" });
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
