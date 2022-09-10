@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sight seeing</title>
+    <link rel="stylesheet" href="../../styles/amaz.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../styles/imgs/CityNest-lg.com.png"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <center>
+      <h1>Public transport scheduler</h1>
+      <p>
+        Powered by Ministry of Transportation & Communication in Botswana +
+        Leaflet
+      </p>
+      <p>
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Search for a place"
+        /><button disabled>Show me</button>
+      </p>
+      <br />
+      <div id="map"></div>
+      <p>
+        <input type="text" name="" id="" placeholder="Where are you from?" />
+        ==>
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Where are you going?"
+        /><button disabled>Book</button>
+      </p>
+      <button disabled>Locate me</button>
+      <button disabled>Share directions</button>
+    </center>
+    <br />
+    <p>From:____________ To:________________</p>
+    <p>Fuel cost:</p>
+    <p>Trip Cost:</p>
+    <p>Transportation arrival time:</p>
+    <p>Total trip time:</p>
+    <p>Weather condition:</p>
+    <p>Route traffic condition:</p>
+    <p>
+      If any delays are encountered => call
+      <button disabled>My chauffeur</button>
+    </p>
+    <center>
+      <a href="#" onclick="history.back()"
+        ><button disabled>Manage subscriptions & accounts</button>
+        <button disabled>Cancel trip</button>
+        <button>
+          <strong
+            ><img
+              src="../../styles/imgs/online.png"
+              alt="page online"
+              width="5px"
+              height="5px"
+            />Quit map</strong
+          >
+        </button></a
+      >
+    </center>
+    <script>
+      const map = L.map("map").setView([-24.657, 25.907], 14);
+
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+        attribution: "© OpenStreetMap",
+      }).addTo(map);
+    </script>
+  </body>
+</html>

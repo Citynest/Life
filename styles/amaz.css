@@ -150,6 +150,8 @@ p a {
   transform: perspective(3000px) rotateY(-5deg);
 }
 
+#map { height: 310px; }
+
 
 /* =========================== Portal ===================== */
 nav {
