@@ -138,9 +138,11 @@ updateCloud.addEventListener("click", (g) => {
   const file = document.getElementById("profileView").files[0];
   const storageRef = ref(storage, "images/" + file.name);
   const user = auth.currentUser;
+  const uploadedByDate = new Date();
   const metadata = {
     contentType: "image/jpeg",
-    owner: user,
+    Auther: uploadedByDate,
+    user: user,
   };
   const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
