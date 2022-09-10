@@ -2,11 +2,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 
 import {
-  getDatabase,
-  connectDatabaseEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
-
-import {
   getAuth,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
@@ -29,7 +24,6 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
@@ -168,7 +162,7 @@ updateCloud.addEventListener("click", (g) => {
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         alert("✔ Your media is safely stored in your vault");
-        //console.log("File available at", downloadURL); <---------------This is a paid service
+        /*console.log("File available at", downloadURL); <---------------This is a paid service*/
       });
     }
   );
