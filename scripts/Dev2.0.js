@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 
 import {
   getAuth,
@@ -11,7 +11,7 @@ import {
   browserSessionPersistence,
   sendPasswordResetEmail,
   connectAuthEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 import {
   getDatabase,
@@ -19,7 +19,7 @@ import {
   ref,
   update,
   connectDatabaseEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
 // Your web app's Firebase configuration
 // Define firebase
@@ -101,7 +101,7 @@ submitLogin.addEventListener("click", (b) => {
             onAuthStateChanged(auth, (user) => {
               if (user) {
                 alert("You are now logged in as: " + avatar);
-                setPersistence(auth, browserSessionPersistence)
+                setPersistence(auth, browserSessionPersistence, user)
                   .then(() => {
                     // Existing and future Auth states are now persisted in the current
                     // session only. Closing the window would clear any existing state even

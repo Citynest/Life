@@ -1,17 +1,22 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+
+import {
+  getDatabase,
+  connectDatabaseEmulator,
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
 import {
   getAuth,
   onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 import {
   getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-storage.js";
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
 
 // Your web app's Firebase configuration
 
@@ -22,7 +27,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
@@ -30,14 +37,13 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/firebase.User
-
-    const getOriginFromUrl = (url) => {
+    function getOriginFromUrl(url) {
       // https://stackoverflow.com/questions/1420881/how-to-extract-base-url-from-a-string-in-javascript
       const pathArray = url.split("/");
       const protocol = pathArray[0];
       const host = pathArray[2];
       return protocol + "//" + host;
-    };
+    }
 
     // Get underlying body if available. Works for text and json bodies.
     const getBodyContent = (req) => {
@@ -110,21 +116,12 @@ onAuthStateChanged(auth, (user) => {
         getIdTokenPromise().then(requestProcessor, requestProcessor)
       );
     });
-
     console.log(user.email + " is logged in");
   } else {
     // User is signed out
     alert("You are logged out, please sign in/ register first");
     window.location.replace("../../offline_VS_Online/auth.html");
   }
-});
-
-const endSession = document.getElementById("killSwitch");
-endSession.addEventListener("click", (f) => {
-  f.preventDefault();
-  auth.signOut().then(() => {
-    window.location.replace("../../Home.html");
-  });
 });
 
 // ADD CLICK LISTENER TO THE BUTTON WE SELECTED
@@ -162,14 +159,16 @@ updateCloud.addEventListener("click", (g) => {
     },
     (error) => {
       // Handle unsuccessful uploads
-      alert("⚠ A lag was detected, check your internet connection & try again");
+      alert(
+        "⚠ Slow network is detected,  please check your internet connection & try again"
+      );
     },
     () => {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         alert("✔ Your media is safely stored in your vault");
-        console.log("File available at", downloadURL);
+        //console.log("File available at", downloadURL); <---------------This is a paid service
       });
     }
   );
@@ -177,4 +176,12 @@ updateCloud.addEventListener("click", (g) => {
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
+});
+
+const endSession = document.getElementById("killSwitch");
+endSession.addEventListener("click", (f) => {
+  f.preventDefault();
+  auth.signOut().then(() => {
+    window.location.replace("../../Home.html");
+  });
 });

@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 
 import {
   getAuth,
@@ -10,41 +10,26 @@ import {
   setPersistence,
   browserSessionPersistence,
   sendPasswordResetEmail,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 import {
   getDatabase,
   set,
   ref,
   update,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js";
-
-import {
-  getAnalytics,
-  logEvent,
-} from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js";
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
 // Your web app's Firebase configuration
-
-// Initialize Firebase
+// Define firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
-  authDomain: "web3-44ce7.firebaseapp.com",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
-  projectId: "web3-44ce7",
-  storageBucket: "web3-44ce7.appspot.com",
-  messagingSenderId: "162620951739",
-  appId: "1:162620951739:web:634d6f375b357004eced9e",
-  measurementId: "G-ZGQ0H1X7YW",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const database = getDatabase(app);
-
-logEvent(analytics, "notification_received");
 
 // Signup function
 submitData.addEventListener("click", (a) => {
@@ -98,13 +83,13 @@ submitLogin.addEventListener("click", (b) => {
   signInWithEmailAndPassword(auth, avatar, secretKey)
     .then((userCredential) => {
       // logged in
-      const user = userCredential.user;
-      // ...
-
+      const user = userCredential.user.uid;
+      const databaseOrganiser = "<<==================================>>";
       const lgdate = new Date();
 
       update(ref(database, "users/" + user.uid), {
         Last_login: lgdate,
+        styler: databaseOrganiser,
       })
         .then(() => {
           // Data saved successfully!
@@ -112,7 +97,7 @@ submitLogin.addEventListener("click", (b) => {
             onAuthStateChanged(auth, (user) => {
               if (user) {
                 alert("You are now logged in as: " + avatar);
-                setPersistence(auth, browserSessionPersistence)
+                setPersistence(auth, browserSessionPersistence, user)
                   .then(() => {
                     // Existing and future Auth states are now persisted in the current
                     // session only. Closing the window would clear any existing state even
@@ -130,7 +115,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../star/free/hub.html");
+          window.location.replace("../star/free/main.html");
         })
         .catch((error) => {
           // The write failed...
@@ -150,6 +135,7 @@ submitReset.addEventListener("click", (c) => {
     .then(() => {
       // Password reset email sent!
       // ..
+      c.preventDefault();
       alert("Check your email for a link to your account recovery");
     })
     .catch((error) => {
