@@ -16,14 +16,6 @@ import {
   connectAuthEmulator,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  connectStorageEmulator,
-  getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
-
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
@@ -37,10 +29,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
-const storage = getStorage(app);
 connectAuthEmulator(auth, "http://localhost:9000");
 connectDatabaseEmulator(database, "localhost", 9100);
-connectStorageEmulator(storage, "localhost", 9199);
 
 const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
@@ -141,56 +131,34 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// ADD CLICK LISTENER TO THE BUTTON WE SELECTED
-updateCloud.addEventListener("click", (g) => {
-  g.preventDefault();
-  // GET FILE FROM THE  FILE INPUT
-  const file = document.getElementById("profileView").files[0];
-  const storageRef = ref(storage, "images/" + file.name);
-  const user = auth.currentUser;
-  const uploadedByDate = new Date();
-  const metadata = {
-    contentType: "image/jpeg",
-    Auther: uploadedByDate,
-    user: user,
-  };
-  const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+const yearsAlive = document.getElementById("age").value;
 
-  // Register three observers:
-  // 1. 'state_changed' observer, called any time the state changes
-  // 2. Error observer, called on failure
-  // 3. Completion observer, called on successful completion
-  uploadTask.on(
-    "state_changed",
-    (snapshot) => {
-      // Observe state change events such as progress, pause, and resume
-      // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-      const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log("Upload is " + progress + "% done");
-      switch (snapshot.state) {
-        case "paused":
-          console.log("Upload is paused");
-          break;
-        case "running":
-          console.log("Upload is running");
-          break;
-      }
-    },
-    (error) => {
-      // Handle unsuccessful uploads
-      alert(
-        "⚠ Slow network is detected,  please check your internet connection & try again"
-      );
-    },
-    () => {
-      // Handle successful uploads on complete
-      // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-      getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        alert("✔ Your media is safely stored in your vault");
-        //console.log("File available at", downloadURL); <---------------This is a paid service
-      });
-    }
-  );
+const above18 = document.getElementById("SSN").value;
+
+const doesWhat4Fun = document.getElementById("hobbies").value;
+/**/ //<--- comments for disabling knowMyUser btn function
+knowYourCustomer.addEventListener("click", (h) => {
+  alert("The button still works, check console for captured data!");
+  const aReal1 = document.getElementById("profilePic").file;
+  const birthday = document.getElementById("dob").value;
+  const doesWhat4ALvn = document.getElementById("occupation").value;
+  const privacyMode = document.getElementById("terms&conditions").value;
+  const connectGoogle = document.getElementById("googleToken").value;
+  const connectMicrosoft = document.getElementById("MicrosoftToken").value;
+  const connectTwitter = document.getElementById("TwitterToken").value;
+  const connectFb = document.getElementById("facebookToken").value;
+  const connectInstagram = document.getElementById("InstaToken").value;
+  const connectWhatsapp = document.getElementById("whatsappToken").value;
+  const connectFNB = document.getElementById("firstNBToken").value;
+  const connectBarclays = document.getElementById("barclaysToken").value;
+  const myNetwork = document.getElementById("networkProvider");
+  const nameOfBank = document.getElementById("bankName").value;
+  const typeOfBankCard = document.getElementById("cardType").value;
+  const kingOfDebtNo = document.getElementById("debtLordNumber").value;
+  const cExpD = document.getElementById("cardExpD").value;
+  const verifyCard = document.getElementById("vcv").value;
+
+  console.log(yearsAlive, above18, doesWhat4Fun);
 });
 
 self.addEventListener("activate", (event) => {

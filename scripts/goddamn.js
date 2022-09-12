@@ -16,11 +16,26 @@ function thenewcallout3() {
   document.querySelector(".fixAcc").style.display = "block";
 }
 
-function thenewcallout4() {
-  document.querySelector(".container").style.display = "none";
-  document.querySelector(".div2").style.display = "none";
-  document.querySelector(".fixAcc").style.display = "none";
-  document.querySelector(".").style.display = "block";
+// Avatar raw functions
+function accFunc1() {
+  document.querySelector(".KYC").style.display = "none";
+  document.querySelector(".otherAccounts").style.display = "block";
+  document.querySelector(".bankInfo").style.display = "none";
+}
+
+function accFunc2() {
+  document.querySelector(".KYC").style.display = "none";
+  document.querySelector(".otherAccounts").style.display = "none";
+  document.querySelector(".cardInfo").style.display = "block";
+}
+function accFunc3() {
+  document.querySelector(".KYC").style.display = "block";
+  document.querySelector(".otherAccounts").style.display = "none";
+  document.querySelector(".bankInfo").style.display = "none";
+}
+
+function navOff() {
+  document.querySelector(".menu").style.display = "none";
 }
 
 function baller() {
