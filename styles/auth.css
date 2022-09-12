@@ -161,6 +161,33 @@ body {
     text-align: center;
 }
 
+/**/
+
+.KYC h1 {
+    color: white;
+}
+
+.KYC p {
+    color: white;
+}
+
+.otherAccounts {
+    order: 1;
+    display: none;
+}
+
+.otherAccounts h1,p {
+    color: white;
+}
+
+.cardInfo {
+    order: 2;
+    display: none;
+}
+
+.cardInfo h1,p {
+    color: white;
+}
 
 
 
