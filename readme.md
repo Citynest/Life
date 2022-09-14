@@ -66,3 +66,12 @@ See you again next time folks
 10/08/2022
 =============================
 Began designing after login designs and a bit functionility to help the user understand & operate the website
+
+=============================
+14/09/2022
+=============================
+I've been silently pushing updates to the website and it is shaping up well...
+
+while reading my log file I noticed it is going to be large so I decided to take this oppotunity to announce Discord
+to momentarily host our community to not clog the website for Tech Enthusiasts... to learn more on Updates see our log file on our
+Discord Server located at this link >>>>>>>>>>>>> https://discord.gg/ZK9hPsNr
