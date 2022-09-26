@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
-
 import {
   getAuth,
   onAuthStateChanged,
@@ -12,7 +10,6 @@ import {
   getStorage,
   ref,
   uploadBytesResumable,
-  connectStorageEmulator,
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
 

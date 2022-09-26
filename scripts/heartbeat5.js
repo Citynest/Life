@@ -42,8 +42,6 @@ connectAuthEmulator(auth, "http://localhost:9000");
 connectDatabaseEmulator(database, "localhost", 9100);
 connectStorageEmulator(storage, "localhost", 9199);
 
-
-
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
