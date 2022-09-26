@@ -141,34 +141,10 @@
     <script src="../../scripts/goddamn.js"></script>
 
     
-    <!--- Firebase
-    <script src="../../scripts/1xpulse.js" type="module"></script> --->
-
-    
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LetwxUiAAAAACOHgJAV5gYZIzsb-hXWcaWZQVAR"></script>
-   <script>
-
-    function onSuccess(action_token) {
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET','YOUR_URL', false);
-      // Attach the action-token to the predefined request header
-      xhr.setRequestHeader("X-Recaptcha-Token", action_token);
-      xhr.send(null);
-    }
-
-    function onError(reason) {
-      alert('Response promise rejected: ' + reason);
-    }
-
-    grecaptcha.enterprise.ready(function () {
-      document.getElementById("updateCloud").onclick = () => {
-        grecaptcha.enterprise.execute('6LetwxUiAAAAACOHgJAV5gYZIzsb-hXWcaWZQVAR', {
-        }).then(onSuccess, onError);
-      };
-    });
-   </script>
-   <!--- Firebase Devmode --->
-    <script src="../../scripts/heartbeat5.js" type="module"></script>
+    <!--- Firebase --->
+    <script src="../../scripts/1xpulse.js" type="module"></script>
+   <!--- Firebase Devmode
+    <script src="../../scripts/heartbeat5.js" type="module"></script> --->
 </body>
 
 </html>
