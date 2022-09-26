@@ -27,7 +27,6 @@ const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -119,7 +118,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../star/standard/serviceAccount.html");
+          window.location.replace("../star/free/hub.html");
         })
         .catch((error) => {
           // The write failed...

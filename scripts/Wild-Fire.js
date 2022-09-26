@@ -31,6 +31,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
+
 // Signup function
 submitData.addEventListener("click", (a) => {
   const email = document.getElementById("email").value;

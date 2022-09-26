@@ -29,6 +29,12 @@ function accFunc2() {
   document.querySelector(".cardInfo").style.display = "block";
 }
 
+function accFunc3() {
+  document.querySelector(".KYC").style.display = "block";
+  document.querySelector(".otherAccounts").style.display = "none";
+  document.querySelector(".cardInfo").style.display = "none";
+}
+
 function navOff() {
   document.querySelector(".menu").style.display = "none";
 }
