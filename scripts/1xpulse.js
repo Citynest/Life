@@ -17,8 +17,12 @@ import {
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
+  authDomain: "web3-44ce7.firebaseapp.com",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
+  projectId: "web3-44ce7",
   storageBucket: "web3-44ce7.appspot.com",
+  appId: "1:162620951739:web:634d6f375b357004eced9e",
+  measurementId: "G-ZGQ0H1X7YW",
 };
 
 // Initialize Firebase
