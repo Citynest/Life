@@ -13,22 +13,12 @@ import {
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
 
-import {
-  getAnalytics,
-  logEvent,
-  setUserProperties,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
-
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
-  authDomain: "web3-44ce7.firebaseapp.com",
-  projectId: "web3-44ce7",
+  databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
   storageBucket: "web3-44ce7.appspot.com",
-  messagingSenderId: "162620951739",
-  appId: "1:162620951739:web:634d6f375b357004eced9e",
-  measurementId: "G-ZGQ0H1X7YW",
 };
 
 // Initialize Firebase
@@ -36,17 +26,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const storage = getStorage(app);
-const analytics = getAnalytics(app);
-logEvent(analytics, "notification_received");
-setUserProperties(analytics, { feels_mostly: "bored" });
-
-const endSession = document.getElementById("killSwitch");
-endSession.addEventListener("click", (f) => {
-  f.preventDefault();
-  auth.signOut().then(() => {
-    window.location.replace("../../Home.html");
-  });
-});
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -146,9 +125,11 @@ updateCloud.addEventListener("click", (g) => {
   const file = document.getElementById("profileView").files[0];
   const storageRef = ref(storage, "images/" + file.name);
   const user = auth.currentUser;
+  const uploadedByDate = new Date();
   const metadata = {
     contentType: "image/jpeg",
-    owner: user,
+    Auther: uploadedByDate,
+    user: user,
   };
   const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
@@ -183,7 +164,7 @@ updateCloud.addEventListener("click", (g) => {
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
         alert("✔ Your media is safely stored in your vault");
-        /*console.log("File available at", downloadURL); <---------------This is a paid service*/
+        //console.log("File available at", downloadURL); <---------------This is a paid service
       });
     }
   );

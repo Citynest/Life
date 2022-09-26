@@ -42,26 +42,7 @@ connectAuthEmulator(auth, "http://localhost:9000");
 connectDatabaseEmulator(database, "localhost", 9100);
 connectStorageEmulator(storage, "localhost", 9199);
 
-// RECAPTREV3
-const {
-  initializeAppCheck,
-  ReCaptchaEnterpriseProvider,
-} = **require("https://www.gstatic.com/firebasejs/9.9.4/firebase-app-check");
-const appCheck = initializeAppCheck(app, {
-  provider: new ReCaptchaEnterpriseProvider(
-    "6Lfa9xUiAAAAANxpgvIPoSjcqBZZLnTT8DZhTod_"
-  ),
-  isTokenAutoRefreshEnabled: true, // Set to true to allow auto-refresh.
-});
 
-firebase.appCheck().setTokenAutoRefreshEnabled(true);
-const endSession = document.getElementById("killSwitch");
-endSession.addEventListener("click", (f) => {
-  f.preventDefault();
-  auth.signOut().then(() => {
-    window.location.replace("../../Home.html");
-  });
-});
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
