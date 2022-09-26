@@ -2,14 +2,25 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 
 import {
+  getDatabase,
+  onValue,
+  query,
+  orderByChild,
+  connectDatabaseEmulator,
+} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+
+import {
   getAuth,
   onAuthStateChanged,
+  reauthenticateWithCredential,
+  connectAuthEmulator,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 import {
   getStorage,
   ref,
   uploadBytesResumable,
+  connectStorageEmulator,
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
 
@@ -24,6 +35,7 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
