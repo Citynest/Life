@@ -1,19 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
 
-import {
-  getDatabase,
-  onValue,
-  query,
-  orderByChild,
-  connectDatabaseEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
 import {
   getAuth,
   onAuthStateChanged,
-  reauthenticateWithCredential,
-  connectAuthEmulator,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 
 import {
@@ -35,7 +27,6 @@ const firebaseConfig = {
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
 
