@@ -167,7 +167,9 @@ updateCloud.addEventListener("click", (g) => {
     },
     (error) => {
       // Handle unsuccessful uploads
-      alert(error);
+      alert(
+        "⚠ Slow network is detected, please check your internet connection & try again"
+      );
     },
     () => {
       // Handle successful uploads on complete
