@@ -42,6 +42,14 @@ connectAuthEmulator(auth, "http://localhost:9000");
 connectDatabaseEmulator(database, "localhost", 9100);
 connectStorageEmulator(storage, "localhost", 9199);
 
+const endSession = document.getElementById("killSwitch");
+endSession.addEventListener("click", (f) => {
+  f.preventDefault();
+  auth.signOut().then(() => {
+    window.location.replace("../../Home.html");
+  });
+});
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
