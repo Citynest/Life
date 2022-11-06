@@ -38,10 +38,11 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
-connectAuthEmulator(auth, "http://localhost:9000");
+connectAuthEmulator(auth, "http://localhost:4000");
 connectDatabaseEmulator(database, "localhost", 9100);
 connectStorageEmulator(storage, "localhost", 9199);
 
+//Logout function
 const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
   f.preventDefault();
@@ -133,7 +134,9 @@ onAuthStateChanged(auth, (user) => {
         getIdTokenPromise().then(requestProcessor, requestProcessor)
       );
     });
-    console.log(user.email + " is logged in");
+    let header = document.getElementById("userDisplay");
+    header.innerHTML = user.email;
+    //console.log(user.email + " is logged in");
   } else {
     // User is signed out
     alert("You are logged out, please sign in/ register first");
@@ -147,12 +150,12 @@ updateCloud.addEventListener("click", (g) => {
   // GET FILE FROM THE  FILE INPUT
   const file = document.getElementById("profileView").files[0];
   const storageRef = ref(storage, "images/" + file.name);
-  const user = auth.currentUser;
+  const Thisuser = auth.currentUser;
   const uploadedByDate = new Date();
   const metadata = {
     contentType: "image/jpeg",
     Auther: uploadedByDate,
-    user: user,
+    user: Thisuser,
   };
   const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 

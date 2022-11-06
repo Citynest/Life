@@ -77,3 +77,23 @@ function funTime() {
   document.querySelector(".landing-pg").style.display = "none";
   document.querySelector(".selfCare").style.display = "none";
 }
+
+function spazaDisplay() {
+  document.querySelector(".entertainment").style.display = "none";
+}
+
+function entertainment() {
+  document.querySelector(".entertainment").style.display = "block";
+  document.querySelector("#screen1").style.display = "none";
+}
+
+function screenRestore() {
+  document.querySelector("#screen1").style.display = "block";
+  document.querySelector(".entertainment").style.display = "none";
+}
+
+function importantMessage() {
+  alert(
+    "As you know Ukrain is in trouble and parts of this website relies on their technology, so please upgrade your tier to support Ukrain or carry seeds in your pocket"
+  );
+}

@@ -10738,5 +10738,4 @@
 
   return jQuery;
 });
-
-//singed by Starlink
+//signed by Starlink

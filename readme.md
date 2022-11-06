@@ -9,7 +9,7 @@ So the website's layout will be unique to each user as development continues.
 This website is highly optimized for Desktop viewing/ landscape mode on computers, tablets and large mobile devices although it is usable in portrait mode some attributes will not show quiet well or at all.
 
 =============================
-18/05/2022
+18/05/22
 =============================
 Today's update is delayed on your end (the user) since the last update 2 months ago I have been very busy
 

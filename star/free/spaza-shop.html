@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online tuck Shop</title>
-    <link rel="stylesheet" href="../../styles/amaz.css" />
+    <link rel="stylesheet" href="../../styles/amazingSoup.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -18,8 +18,9 @@
     ></script>
   </head>
 
-  <body>
+  <body onload="spazaDisplay()">
     <center>
+      <div id="screen1">
       <h1>Welcome to the spaza shop</h1>
       <h3>Great deals are coming your way! hang in there💖</h3>
       <input type="text" placeholder="Wild search" id="scan" /><button
@@ -37,75 +38,81 @@
         </p>
         <p>Anything you need, we got it, if we dont someone in here has it!</p>
         <p>
-          <button onclick="pageStatus()">
+          <a href="./travel.html"><button>
             <img
               src="../../styles/imgs/transport.jpg"
               alt="Transportation"
               width="220px"
               height="150px"
             /><br />Transportation
-          </button>
-          <button onclick="pageStatus()">
+          </button></a>
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/shopping.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Clothes
-          </button>
-          <button onclick="pageStatus()">
+          </button></a>
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/grocery.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Foods & toiletry
-          </button>
-          <button onclick="pageStatus()">
+          </button></a>
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/Tech.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Gadgets
-          </button>
+          </button></a>
         </p>
         <p>
-          <button onclick="pageStatus()">
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/furniture.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Furniture
-          </button>
-          <button onclick="pageStatus()">
+          </button></a>
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/medicine.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Pharmacy
-          </button>
-          <button onclick="pageStatus()">
+          </button></a>
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/data.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Internet bundles
-          </button>
-          <button onclick="pageStatus()">
+          </button></a>
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/airtime.jpg"
               alt=""
               width="220px"
               height="150px"
             /><br />Airtime
-          </button>
+          </button></a>
         </p>
-        <p>
-          <button onclick="pageStatus()">
+        <p><a href="./my-vault2.0.html"><button>
+          <img
+            src="../../styles/imgs/banky.png"
+            alt=""
+            width="220px"
+            height="150px"
+          /><br />My vault
+        </button></a> <button onclick="pageStatus()">
             <img
               src="../../styles/imgs/donate.jpg"
               alt=""
@@ -113,14 +120,14 @@
               height="150px"
             /><br />Buy a cup of coffee for me
           </button>
-          <button onclick="pageStatus()">
+          <a href="../vendors/Botswana/Gaborone.html"><button>
             <img
               src="../../styles/imgs/tv-static.gif"
               alt=""
               width="220px"
               height="150px"
             /><br />TV & Streaming services
-          </button> <a href="#" onclick="pageStatus()"><button>
+          </button></a> <a href="../standard/class-Organiser.html"><button>
             <img src="../../styles/imgs/baller.jpg" 
             width="220px"
             height="150px" alt="upgrade class" /></a
@@ -128,22 +135,37 @@
         
         </p>
         <h3>15% off weekend deal on all airtime purchases</h3>
-        <p>Applicable to some network providers</p>
-      </div>
+        <p>Applicable to some network providers<br><a href="https://forms.gle/eX5P4fpbug3N2U7w8"><button>Become a vendor</button></a></p>
+      </div></div>
     </center>
+
+    <center><div class="entertainment">
+      <h1>A little something for everyone</h1><br>
+      <h3>Here are a few suggestions to entertain yourself with</h3><br>
+      <p><a href="#" onclick="pageStatus()">
+          <img src="../../styles/imgs/musicLink.png" alt="Music" width="200px" height="200px"></a> <a href="#" onclick="pageStatus()">
+              <img src="../../styles/imgs/cinema.png" alt="Movies/ Series" width="200px" height="200px"></a> 
+              <a href="#" onclick="pageStatus()">
+                  <img src="../../styles/imgs/love.png" alt="Romance" width="200px" height="200px"></a>
+          <a href="#" onclick="pageStatus()">
+              <img src="../../styles/imgs/funtime.png" alt="Fun events" width="200px" height="200px"></a></p>
+              <p><a href="#" onclick="pageStatus()"><img src="../../styles/imgs/gameTime.png" alt="My games" width="200px" height="200px">
+              </a></p><br>
+              <p>Not enough for you? there are more exciting things to do in life</p>
+              <p>We are still gathering them for you hang tight...</p>
+  </div></center>
 
     <!---Portal--->
     <nav class="menu">
       <header>Free room <span>[X]</span></header>
       <ol>
         <li class="menu-item">
-          <a href="#" onclick="pageStatus()"
-            ><img
+          <a href="../standard/serviceAccount.html"><img
               src="../../styles/imgs/user.png"
               alt="up"
               width="25px"
               height="25px"
-            />My profile</a
+              /><span id="userDisplay">Spaza shop🛍️</span></a
           >
         </li>
         <li class="menu-item">
@@ -167,7 +189,7 @@
           >
           <ol class="sub-menu">
             <li class="menu-item">
-              <a href="#"
+              <a href="#" onclick="screenRestore()"
                 ><img
                   src="../../styles/imgs/online.png"
                   alt="page online"
@@ -177,7 +199,12 @@
               >
             </li>
             <li class="menu-item">
-              <a href="#" onclick="pageStatus()">Entertainment</a>
+              <a href="#" onclick="entertainment()"><img
+                src="../../styles/imgs/online.png"
+                alt="page online"
+                width="5px"
+                height="5px"
+              />Entertainment</a>
             </li>
             <li class="menu-item">
               <a href="#" onclick="pageStatus()">Productivity</a>
@@ -206,7 +233,12 @@
         </li>
         <ol class="sub-menu">
           <li class="menu-item">
-            <a href="#" onclick="pageStatus()">Upgrade class</a>
+            <a href="../standard/class-Organiser.html"><img
+              src="../../styles/imgs/online.png"
+              alt="page online"
+              width="5px"
+              height="5px"
+            />Upgrade class</a>
           </li>
         </ol>
         <li>
@@ -225,12 +257,12 @@
 
     <script src="../../scripts/1.js"></script>
     <script src="../../scripts/2.js"></script>
-    <script src="../../scripts/wtf1.2.js"></script>
+    <script src="../../scripts/shit.js"></script>
 
     <!--- Firebase --->
-    <script src="../../scripts/1xpulse.js" type="module"></script>
+    <script src="../../scripts/2xpulse.js" type="module"></script>
 
-    <!--- Firebase Devmode 
-    <script src="../../scripts/heartBeat2.0.js" type="module"></script>--->
+    <!--- Firebase Devmode
+    <script src="../../scripts/hospitalBay.js" type="module"></script> --->
   </body>
 </html>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My vault</title>
-    <link rel="stylesheet" href="../../styles/amaz.css" />
+    <link rel="stylesheet" href="../../styles/amazingSoup.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -17,56 +17,110 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body>
-    <center style="color: white">
-      <h2>
-        Your vault is empty, upload some files to access them anywhere on the
-        portal
-      </h2>
-      <br />
-      <p>
-        Select an image
-        <input
-          type="file"
-          accept="image/*"
-          onchange="loadFile(event)"
-          id="profileView"
-        /><br />
-        <img id="output" height="100px" width="100px" alt="preview" />
-        <script>
-          var loadFile = function (event) {
-            var output = document.getElementById("output");
-            output.src = URL.createObjectURL(event.target.files[0]);
-            output.onload = function () {
-              // URL.revokeObjectURL(output.src);  free memory
+  <body onload="spazaDisplay()">
+    <div id="screen1">
+      <center style="color: white">
+        <h2>
+          Your vault is empty, upload some files to access them anywhere on the
+          portal
+        </h2>
+        <br />
+        <p>
+          Select an image
+          <input
+            type="file"
+            accept="image/*"
+            onchange="loadFile(event)"
+            id="profileView"
+          /><br />
+          <img id="output" height="100px" width="100px" alt="preview" />
+          <script>
+            var loadFile = function (event) {
+              var output = document.getElementById("output");
+              output.src = URL.createObjectURL(event.target.files[0]);
+              output.onload = function () {
+                // URL.revokeObjectURL(output.src);  free memory
+              };
             };
-          };
-        </script>
-        <br />universal uploader
-        <input type="file" />
-      </p>
-      <p>
-        <button id="updateCloud" class="mouse-cursor-gradient-tracking">
-          Save
-        </button>
-      </p>
-      <br />
-      <p>
-        Free accounts have a storage space of 50mb for anything digital, you can
-        also save tangible objects to track their whereabouts, share them, gift
-        someone or even sell them
-      </p>
-      <br />
-      <p>
-        Supported digital file types => jpg, png, jpeg, pdf, zip, mp3, mp4, exe,
-        msi, txt, docx, iso, apk (and others)
-      </p>
-      <br />
-      <p>
-        <a href="#" onclick="pageStatus()">
-          <img src="../../styles/imgs/baller.jpg" alt="upgrade class" /></a
-        ><br />Upgrade class to download & sell/ share files from your vault
-      </p>
+          </script>
+          <br />universal uploader
+          <input type="file" />
+        </p>
+        <p>
+          <button id="updateCloud" class="mouse-cursor-gradient-tracking">
+            Save
+          </button>
+        </p>
+        <br />
+        <p>
+          Free accounts have a storage space of 50mb for anything digital, you
+          can also save tangible objects to track their whereabouts, share them,
+          gift someone or even sell them
+        </p>
+        <br />
+        <p>
+          Supported digital file types => jpg, png, jpeg, pdf, zip, mp3, mp4,
+          exe, msi, txt, docx, iso, apk (and others)
+        </p>
+        <br />
+        <p>
+          <a href="#" onclick="pageStatus()">
+            <img src="../../styles/imgs/baller.jpg" alt="upgrade class" /></a
+          ><br />Upgrade class to download & sell/ share files from your vault
+        </p>
+      </center>
+    </div>
+
+    <center>
+      <div class="entertainment">
+        <h1>A little something for everyone</h1>
+        <br />
+        <h3>Here are a few suggestions to entertain yourself with</h3>
+        <br />
+        <p>
+          <a href="#" onclick="pageStatus()">
+            <img
+              src="../../styles/imgs/musicLink.png"
+              alt="Music"
+              width="200px"
+              height="200px"
+          /></a>
+          <a href="#" onclick="pageStatus()">
+            <img
+              src="../../styles/imgs/cinema.png"
+              alt="Movies/ Series"
+              width="200px"
+              height="200px"
+          /></a>
+          <a href="#" onclick="pageStatus()">
+            <img
+              src="../../styles/imgs/love.png"
+              alt="Romance"
+              width="200px"
+              height="200px"
+          /></a>
+          <a href="#" onclick="pageStatus()">
+            <img
+              src="../../styles/imgs/funtime.png"
+              alt="Fun events"
+              width="200px"
+              height="200px"
+          /></a>
+        </p>
+        <p>
+          <a href="#" onclick="pageStatus()"
+            ><img
+              src="../../styles/imgs/gameTime.png"
+              alt="My games"
+              width="200px"
+              height="200px"
+            />
+          </a>
+        </p>
+        <br />
+        <p>Not enough for you? there are more exciting things to do in life</p>
+        <p>We are still gathering them for you hang tight...</p>
+      </div>
     </center>
 
     <!---Portal--->
@@ -80,7 +134,7 @@
               alt="up"
               width="25px"
               height="25px"
-            />My profile</a
+            /><span id="userDisplay">My vault🏚️</span></a
           >
         </li>
         <li class="menu-item">
@@ -104,10 +158,24 @@
           >
           <ol class="sub-menu">
             <li class="menu-item">
-              <a href="#" onclick="pageStatus()">You're here</a>
+              <a href="#" onclick="screenRestore()"
+                ><img
+                  src="../../styles/imgs/online.png"
+                  alt="page online"
+                  width="5px"
+                  height="5px"
+                />You're here</a
+              >
             </li>
             <li class="menu-item">
-              <a href="#" onclick="pageStatus()">Entertainment</a>
+              <a href="#" onclick="entertainment()"
+                ><img
+                  src="../../styles/imgs/online.png"
+                  alt="page online"
+                  width="5px"
+                  height="5px"
+                />Entertainment</a
+              >
             </li>
             <li class="menu-item">
               <a href="#" onclick="pageStatus()">Productivity</a>
@@ -137,7 +205,14 @@
         </li>
         <ol class="sub-menu">
           <li class="menu-item">
-            <a href="#" onclick="pageStatus()">Upgrade class</a>
+            <a href="../standard/class-Organiser.html"
+              ><img
+                src="../../styles/imgs/online.png"
+                alt="page online"
+                width="5px"
+                height="5px"
+              />Upgrade class</a
+            >
           </li>
           <li class="menu-item">
             <a href="./Updates.html"
@@ -167,12 +242,12 @@
     <script src="../../scripts/cool.js"></script>
     <script src="../../scripts/1.js"></script>
     <script src="../../scripts/2.js"></script>
-    <script src="../../scripts/goddamn.js"></script>
+    <script src="../../scripts/shit.js"></script>
 
     <!--- Firebase--->
     <script src="../../scripts/2xpulse.js" type="module"></script>
 
     <!--- Firebase Devmode
-    <script src="../../Devs/2xpulse.js" type="module"></script> --->
+    <script src="../../scripts/hospitalBay.js" type="module"></script> --->
   </body>
 </html>

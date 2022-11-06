@@ -123,7 +123,9 @@ onAuthStateChanged(auth, (user) => {
         getIdTokenPromise().then(requestProcessor, requestProcessor)
       );
     });
-    console.log(user.email + " is logged in");
+    let header = document.getElementById("username");
+    header.innerHTML = user.email;
+    //console.log(user.email + " is logged in");
   } else {
     // User is signed out
     alert("You are logged out, please sign in/ register first");
