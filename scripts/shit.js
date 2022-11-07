@@ -92,6 +92,18 @@ function screenRestore() {
   document.querySelector(".entertainment").style.display = "none";
 }
 
+function question() {
+  alert("What would you like to do here first?");
+}
+
+function act() {
+  alert("Choose a room to choose your own lifestyle");
+}
+
+function buildTrust() {
+  alert("Please upgrade your tier first");
+}
+
 function importantMessage() {
   alert(
     "As you know Ukrain is in trouble and parts of this website relies on their technology, so please upgrade your tier to support Ukrain or carry seeds in your pocket"
