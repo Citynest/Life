@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
 
 import {
   getAuth,
@@ -9,28 +9,32 @@ import {
   onAuthStateChanged,
   setPersistence,
   browserSessionPersistence,
-  sendPasswordResetEmail,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+  sendPasswordResetEmail
+} from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js';
 
 import {
   getDatabase,
   set,
   ref,
-  update,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+  update
+} from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
 
 // Your web app's Firebase configuration
 // Define firebase
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
+  authDomain: "web3-44ce7.firebaseapp.com",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
+  projectId: "web3-44ce7",
+  storageBucket: "web3-44ce7.appspot.com",
+  messagingSenderId: "162620951739",
+  appId: "1:162620951739:web:634d6f375b357004eced9e",
+  measurementId: "G-ZGQ0H1X7YW"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
-
 
 // Signup function
 submitData.addEventListener("click", (a) => {
@@ -38,6 +42,7 @@ submitData.addEventListener("click", (a) => {
   const password = document.getElementById("password").value;
   const phone = document.getElementById("phoneNumber").value;
   const whoAreYou = document.getElementById("1stName").value;
+  const ageCheck = document.getElementById("omang").value;
 
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -47,6 +52,7 @@ submitData.addEventListener("click", (a) => {
         Avatar: email,
         First_Name: whoAreYou,
         Phone: phone,
+        Govt_ID: ageCheck,
       })
         .then(() => {
           // Data saved successfully!
@@ -56,8 +62,8 @@ submitData.addEventListener("click", (a) => {
               if (user) {
                 alert(
                   "Verify your email address: " +
-                    email +
-                    " (check your email spam folder)"
+                  email +
+                  " (check your email spam folder)"
                 );
                 console.log(user);
               }
@@ -116,7 +122,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../star/free/hub.html");
+          window.location.replace("../star/free/console.html");
         })
         .catch((error) => {
           // The write failed...

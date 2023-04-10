@@ -1,20 +1,21 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 
 import {
   getDatabase,
   onValue,
-  query,
-  orderByChild,
+  set,
+  ref as db,
+  update,
   connectDatabaseEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 import {
   getAuth,
   onAuthStateChanged,
   reauthenticateWithCredential,
   connectAuthEmulator,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 import {
   getStorage,
@@ -22,24 +23,23 @@ import {
   uploadBytesResumable,
   connectStorageEmulator,
   getDownloadURL,
-} from "https://www.gstatic.com/firebasejs/9.9.4/firebase-storage.js";
-
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
+  authDomain: "web3-44ce7.firebaseapp.com",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
   storageBucket: "web3-44ce7.appspot.com",
 };
-
 // Initialize Firebase
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
 const storage = getStorage(app);
-connectAuthEmulator(auth, "http://localhost:4000");
-connectDatabaseEmulator(database, "localhost", 9100);
+connectAuthEmulator(auth, "http://localhost:8000");
+connectDatabaseEmulator(database, "localhost", 9000);
 connectStorageEmulator(storage, "localhost", 9199);
 
 //Logout function
@@ -47,7 +47,7 @@ const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
   f.preventDefault();
   auth.signOut().then(() => {
-    window.location.replace("../../Home.html");
+    window.location.replace("../../Index.html");
   });
 });
 
@@ -136,7 +136,7 @@ onAuthStateChanged(auth, (user) => {
     });
     let header = document.getElementById("userDisplay");
     header.innerHTML = user.email;
-    //console.log(user.email + " is logged in");
+    // console.log(user.displayName + " is logged in");
   } else {
     // User is signed out
     alert("You are logged out, please sign in/ register first");
@@ -147,17 +147,30 @@ onAuthStateChanged(auth, (user) => {
 // ADD CLICK LISTENER TO THE BUTTON WE SELECTED
 updateCloud.addEventListener("click", (g) => {
   g.preventDefault();
-  // GET FILE FROM THE  FILE INPUT
+  // GET FILE FROM THE FILE INPUT
   const file = document.getElementById("profileView").files[0];
+
+  //Define cloud storage path for file
   const storageRef = ref(storage, "images/" + file.name);
-  const Thisuser = auth.currentUser;
+  
+  //Define User
+  const currentMe = auth.currentUser;
   const uploadedByDate = new Date();
   const metadata = {
     contentType: "image/jpeg",
     Auther: uploadedByDate,
-    user: Thisuser,
+    user: currentMe
   };
   const uploadTask = uploadBytesResumable(storageRef, file, metadata);
+
+  const msg = document.getElementById("broadcast").value;
+//update database path for messages from text field
+set(db(database, "users/"), {
+  message: msg,
+})
+  .then(() => {
+    console.log("message sent");
+  });
 
   // Register three observers:
   // 1. 'state_changed' observer, called any time the state changes
@@ -189,13 +202,20 @@ updateCloud.addEventListener("click", (g) => {
       // Handle successful uploads on complete
       // For instance, get the download URL: https://firebasestorage.googleapis.com/...
       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-        alert("✔ Your media is safely stored in your vault");
-        //console.log("File available at", downloadURL); <---------------This is a paid service
+        alert("✔ Message sent");
+        //console.log("File available at", downloadURL); <---------------This is a paid service 
+        document.getElementById("broadcast").value = "";
+        const fileInput = document.getElementById("profileView");
+        fileInput.value = "";
       });
     }
   );
 });
 
+
+
+// Function to upload message to Realtime Dat
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
 });
+

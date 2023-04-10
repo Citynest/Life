@@ -4,5 +4,16 @@
     "cors": "^2.8.5",
     "firebase": "^9.9.2",
     "firebase-admin": "^11.0.1"
+  },
+  
+  "scripts": {
+    "start": "webpack-dev-server --open"
+  },
+  
+  "devDependencies": {
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1",
+    "firebase": "^9.9.2",
+    "webpack-dev-server": "^4.13.2"
   }
 }

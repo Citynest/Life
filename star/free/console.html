@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Console - Internet Security Subscription</title>
+    <link rel="stylesheet" href="../../styles/expiriments.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+            height="5px"/>Console</a></li>
+          <li><a href="main.html">Offers</a></li>
+          <li><a href="aboutUs.html">About</a></li>
+          <li><a href="#" id="killSwitch">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Subscription Details Section -->
+    <section class="console-section">
+      <h1>My Tracker</h1>
+      <div id="map"></div>
+      <p>Thank you for choosing our Internet security service. With our service, you can rest assured that your online activities are safe and secure. Here are the details of your subscription:</p>
+      <ul>
+        <li><strong>Subscription Plan:</strong> Free</li>
+        <li><strong>Subscription Start Date:</strong> May 1, 2023</li>
+        <li><strong>Subscription End Date:</strong> April 30, 2024</li>
+        <li><strong>Features:</strong></li>
+        <ul>
+            <li>No additional storage</li>
+          <li>No malware protection</li>
+          <li>No firewall protection</li>
+          <li>No Real-time website monitoring</li>
+          <li>No Identity theft protection</li>
+          <li>No Safe browsing</li>
+        </ul>
+        <li><strong>Price:</strong> P0/month</li>
+        <p>Subscribe <a href="main.html"><button>Now</button></a></p>
+      </ul>
+    </section>
+    <script src="../../scripts/mapSettings.js"></script>
+    <!----<script src="../../scripts/hospitalBay.js" type="module"></script>---->
+    <script src="../../scripts/rebirth.js" type="module"></script>
+  </body>
+</html>

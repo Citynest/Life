@@ -1,153 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <link rel="icon" type="image/x-icon" href="../../styles/imgs/mylg.ico" />
-    <meta charset="UTF-8" />
-    <title>Idle room</title>
-    <link rel="stylesheet" href="../../styles/amazingSoup.css" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6205536631136975"
-     crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Citynest guardian offers</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/expiriments.css">
 </head>
-
-<body onload="startTime()">
-    <div class="landing-pg">
-        <center style="color: white; font-size: 50px;" onload="messageUser()">
-            <input type="text" placeholder="Wild search" id="scan" ><button onclick="pageStatus()">search</button>
-            <script src="../../scripts/time.js"></script>
-            <div id="tiktok"></div>
-        <p><button onclick="pageStatus()">Manage subscriptions & accounts</button> <button onclick="pageStatus()">Calender events</button> 
-            <button onclick="pageStatus()">Status check</button> <button onclick="pageStatus()">Catch a ride</button> <button onclick="pageStatus()">Meals</button> 
-            <a href="./travel.html"><button><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                height="5px">Map</button></a> <button onclick="pageStatus()">My business</button> 
-            <button onclick="pageStatus()">My wallet</button></p>
-    </center>
-    <center>
-        <h3>Link your spotify account</h3>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6MhQMEASvqkJydrmJiMHtJ?utm_source=generator" 
-        width="50%" height="145" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <!----<h3>No streaming service connected!</h3>
+<body>
+	<header>
+		<center><h1>Bounty bug hunters</h1></center>
+	</header>
     
-    <img src="../../styles/imgs/music.png" alt="music bar progress" height="16px" width="230px">
-    <p><button>Prev</button> <button>Play/Pause</button> <button>Repeat</button> <button>Next</button> <button>Shuffle</button></p>---->
-    <h3>It is lonely in here, connect a social platform to see your messages</h3>
-    <p><img src="../../styles/imgs/blueApp.png" alt="" width="240px" height="240px" onload="selfCarePrompt()">
-        <script>
-            function selfCarePrompt() {
-            document.querySelector(".selfCare").style.display = "none";
-            document.querySelector(".entertainment").style.display = "none";
-            }
-        </script>
-        <img src="../../styles/imgs/fb.png" alt="" width="200px" height="200px"> 
-        <img src="../../styles/imgs/insta.png" alt="" width="180px" height="170px"> 
-        <img src="../../styles/imgs/WA.png" alt="" width="195px" height="185px"><br> beta</p>
-        <p></p>
-    </center></div>
+    <nav>
+        <ul>
+          <li><a href="console.html">Console</a></li>
+          <li><a href="#"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+            height="5px"/>Offers</a></li>
+          <li><a href="aboutUs.html">About</a></li>
+          <li><a href="#" id="killSwitch">Sign out</a></li>
+        </ul>
+      </nav>
+	<main>
+		<section><center>
+			<h2>Security offers</h2>
+			<ul>
+				<li>Website security audit - P200</li>
+				<li>Security consulting - P800</li>
+                <li>Data recovery - P10 000</li>
+				<li>Penetration testing - P25 000</li>
+				<li>Malware removal - P50 000</li>
+			</center></ul>
+		</section><br><br>
+        <section>
+            <center><h2>Online Storage Offers</h2>
+            <ul>
+                <li>10GB storage - P70/month</li>
+                <li>50GB storage - P120/month</li>
+                <li>100GB storage - P500/month</li>
+            </center></ul>
+        </section>
+        <section>
+            <center><h2>Available SSD</h2>
+            <ul>
+                <li>1TB SanDisk - P760</li>
+                <li>2TB Kingston - P1200</li>
+                <li>4TB Transcend - P3250</li>
+            </ul>
+        </center></section>
+		<section>
+			<h2>Contact Us</h2>
+            <p>=====================</p>
+			<form>
+                <p>Email: <h3 id="userDisplay"></h3></p>
+				<label for="message">Message:</label>
+				<textarea id="broadcast" name="message"></textarea>
+                <p>
+                    Select an image
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onchange="loadFile(event)"
+                      id="profileView"
+                    /><br />
+                    <img id="output" height="150px" width="220px" alt="preview" />
+                    <script>
+                      var loadFile = function (event) {
+                        var output = document.getElementById("output");
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                        output.onload = function () {
+                          // URL.revokeObjectURL(output.src);  free memory
+                        };
+                      };
+                      
+                    </script>
+                  </p><br><br>
+				<input id="updateCloud" type="submit" value="Submit">
+			</form>
+		</section>
+    <script>
+      const rules = document.getElementById("broadcast");
+const submitButton = document.getElementById("updateCloud");
 
-
-    <div class="selfCare"><center>
-        <h1>Give yourself some love and immerse attention</h1><br>
-        <h3>Where are you goin? pick a place</h3><br>
-        <p><a href="./spaza-shop.html"><button>
-            <img src="../../styles/imgs/spaza.png" alt="Spaza shop" width="200px" height="200px"><br>
-            Spaza shop</button></a> 
-            <a href="#" onclick="pageStatus()"><button>
-                <img src="../../styles/imgs/faith.jpeg" alt="Faith" width="200px" height="200px"><br>
-                Faith</button></a></p><p><a href="./my-vault2.0.html"><img src="../../styles/imgs/vault.png" alt=""><br>My inventory</a></p>
-    </center></div>
-
-
-    <div class="entertainment"><center>
-        <h1>A little something for everyone</h1><br>
-        <h3>Here are a few suggestions to entertain yourself with</h3><br>
-        <p><a href="#" onclick="buildTrust()">
-            <img src="../../styles/imgs/musicLink.png" alt="Music" width="200px" height="200px"></a> <a href="#" onclick="pageStatus()">
-                <img src="../../styles/imgs/cinema.png" alt="Movies/ Series" width="200px" height="200px"></a> 
-                <a href="#" onclick="buildTrust()">
-                    <img src="../../styles/imgs/love.png" alt="Romance" width="200px" height="200px"></a>
-            <a href="#" onclick="buildTrust()">
-                <img src="../../styles/imgs/funtime.png" alt="Fun events" width="200px" height="200px"></a></p>
-                <p><a href="#" onclick="buildTrust()"><img src="../../styles/imgs/gameTime.png" alt="My games" width="200px" height="200px">
-                </a></p><br>
-                <p>Not enough for you? there are more exciting things to do in life</p>
-                <p>We are still gathering them for you hang tight...</p>
-    </center></div>
-
-    
-    <p style="color: rgba(215, 253, 0, 0.986);">Coins: 0 || Inventory capacity: 2kb/50mb used || Security: None</p>
-
-
-
-    <!--- Portal --->
-    <nav class="menu">
-        <header>Free room <span>[X]</span><br></header>
-        <ol>
-            <li class="menu-item">
-                <a href="../standard/serviceAccount.html"><img src="../../styles/imgs/user.png" alt="up" width="25px"
-                        height="25px" /><span id="userDisplay">Hello💕</span></a>
-            </li>
-            <li class="menu-item">
-                <a href="./hub.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Go back</a>
-            </li>
-            <li class="menu-item">
-                <a href="#" onclick="homeBase()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Home</a>
-            </li>
-            <ol class="sub-menu">
-                <li class="menu-item">
-                    <a href="#" onclick="where2()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Self care</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" onclick="funTime()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Entertainment<img src="../../styles/imgs/locked.png" alt="page online" width="17px"
-                        height="15px"></a>
-                </li>
-            </ol>
-            </li>
-            <ol class="sub-menu">
-                <li class="menu-item">
-                    <a href="#" onclick="buildTrust()">Productivity<img src="../../styles/imgs/locked.png" alt="page online" width="17px"
-                        height="15px"></a>
-                </li>
-            </ol>
-
-            <li class="menu-item">
-                <a href="#" id="killSwitch"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Sign out</a>
-            </li>
-            <li class="menu-item">
-                <a href="./sponsors.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Sponsors</a>
-            </li>
-            <ol class="sub-menu">
-                <li class="menu-item"><a href="../standard/class-Organiser.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                    height="5px">Upgrade class</a></li>
-                <li class="menu-item"><a href="./Updates.html"><img src="../../styles/imgs/online.png" alt="page online"
-                            width="5px" height="5px">Portal updates</a></li>
-            </ol>
-            <li class="menu-item">
-                <a href="../standard/Kevin.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
-                        height="5px">Talk to the developer</a>
-            </li>
-        </ol>
-        <footer><button aria-label="Toggle Menu">Toggle</button></footer>
-    </nav>
-
-
-    <script src="../../scripts/1.js"></script>
-    <script src="../../scripts/2.js"></script>
-    <script src="../../scripts/shit.js"></script>
-
-    
-    <!--- Firebase --->
-    <script src="../../scripts/rebirth.js" type="module"></script>
-   <!--- Firebase Devmode
-    <script src="../../scripts/hospitalBay.js" type="module"></script> --->
+rules.addEventListener("input", () => {
+  if(rules.value.trim() === "") {
+    submitButton.disabled == true;
+  } else {
+    submitButton.disabled = false;
+  }
+});
+    </script>
+	</main>
+	<footer>
+		<p>&copy; 2023 CyberLord. All rights reserved.</p>
+	</footer>
+  <script src="../../scripts/rebirth.js" type="module"></script>
+    <!----<script src="../../scripts/hospitalBay.js" type="module"></script>--->
+      
 </body>
-
 </html>
-
-<!---Signed by Starlink-->

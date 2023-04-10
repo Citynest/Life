@@ -1,0 +1,17 @@
+{
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.port": 1000,
+    "liveServer.settings.mimeTypes": {
+        "application/javascript": ["js"],
+        "text/html": ["html"],
+        "image/jpeg": ["jpg"],
+        "image/png": ["png"],
+        "image/gif": ["gif"],
+        "image/svg+xml": ["svg"],
+        "text/css": ["css"],
+        "text/plain": ["txt"],
+        "application/json": ["json"],
+        "application/wasm": ["wasm"]
+      }
+    
+}
