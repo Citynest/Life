@@ -63,7 +63,7 @@ submitData.addEventListener("click", (a) => {
                 alert(
                   "Verify your email address: " +
                   email +
-                  " (check your email spam folder)"
+                  "(check your email spam folder)"
                 );
                 console.log(user);
               }
@@ -122,7 +122,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../star/free/console.html");
+          window.location.replace("../../../index.html");
         })
         .catch((error) => {
           // The write failed...
