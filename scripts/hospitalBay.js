@@ -150,7 +150,7 @@ updateCloud.addEventListener("click", (g) => {
   // GET FILE FROM THE FILE INPUT
   const file = document.getElementById("profileView").files[0];
 
-  //Define cloud storage path for file
+  //Define cloud storage path for file uploading
   const storageRef = ref(storage, "images/" + file.name);
   
   //Define User
@@ -162,10 +162,12 @@ updateCloud.addEventListener("click", (g) => {
     user: currentMe
   };
   const uploadTask = uploadBytesResumable(storageRef, file, metadata);
-
+  const lgTime = new Date();
   const msg = document.getElementById("broadcast").value;
+
+
 //update database path for messages from text field
-set(db(database, "supporters/"), {
+set(db(database, "supporters/" + lgTime), {
   message: msg,
 })
   .then(() => {
@@ -175,6 +177,8 @@ set(db(database, "supporters/"), {
   // Register three observers:
   // 1. 'state_changed' observer, called any time the state changes
   // 2. Error observer, called on failure
+  
+  
   // 3. Completion observer, called on successful completion
   uploadTask.on(
     "state_changed",
@@ -182,13 +186,14 @@ set(db(database, "supporters/"), {
       // Observe state change events such as progress, pause, and resume
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log("Upload is " + progress + "% done");
+      const uploadProgress = document.getElementById("uploads");
+      uploadProgress.innerHTML = "⏳Analysing image";
       switch (snapshot.state) {
         case "paused":
-          console.log("Upload is paused");
+          uploadProgress.innerHTML = "Uploading: "+ progress + "% done " + "<button>Resume</button>";
           break;
         case "running":
-          console.log("Upload is running");
+          uploadProgress.innerHTML = "Uploading: "+ progress + "% done " + "<button>Pause</button>";
           break;
       }
     },

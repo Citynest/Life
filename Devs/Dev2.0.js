@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+// Import the functions I need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
 
 import {
@@ -21,8 +21,7 @@ import {
   connectDatabaseEmulator,
 } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
 
-// Your web app's Firebase configuration
-// Define firebase
+// My web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
   authDomain: "web3-44ce7.firebaseapp.com",
@@ -33,6 +32,7 @@ const firebaseConfig = {
   appId: "1:162620951739:web:634d6f375b357004eced9e",
   measurementId: "G-ZGQ0H1X7YW"
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
@@ -86,7 +86,7 @@ submitData.addEventListener("click", (a) => {
     });
 });
 
-// login function
+// Login function
 submitLogin.addEventListener("click", (b) => {
   const avatar = document.getElementById("avatar").value;
   const secretKey = document.getElementById("secretKey").value;
@@ -95,12 +95,10 @@ submitLogin.addEventListener("click", (b) => {
     .then((userCredential) => {
       // logged in
       const user = userCredential.user.uid;
-      const databaseOrganiser = "<<==================================>>";
       const lgdate = new Date();
 
-      update(ref(database, "users/" + user.uid), {
+      update(ref(database, "users/" + user), {
         Last_login: lgdate,
-        styler: databaseOrganiser,
       })
         .then(() => {
           // Data saved successfully!

@@ -4,12 +4,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebas
 import {
   getDatabase,
   set,
-  ref as db
+  ref as db,
+  update,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 import {
   getAuth,
-  onAuthStateChanged
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 import {
@@ -18,16 +19,16 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js";
-// Your web app's Firebase configuration
 
+// My web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBYGWKw0e1B-jhHmESHyxtjPKguhzQdFPg",
   authDomain: "web3-44ce7.firebaseapp.com",
   databaseURL: "https://web3-44ce7-default-rtdb.firebaseio.com",
   storageBucket: "web3-44ce7.appspot.com",
 };
-// Initialize Firebase
 
+// Initializing Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const auth = getAuth(app);
@@ -38,10 +39,11 @@ const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
   f.preventDefault();
   auth.signOut().then(() => {
-    window.location.replace("../../index.html");
+    window.location.replace("../../Index.html");
   });
 });
 
+// No unauthorized user allowed state listener
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
@@ -135,7 +137,7 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-// ADD CLICK LISTENER TO THE BUTTON WE SELECTED
+// Submit button on main page
 updateCloud.addEventListener("click", (g) => {
   g.preventDefault();
   // GET FILE FROM THE FILE INPUT
@@ -153,10 +155,10 @@ updateCloud.addEventListener("click", (g) => {
     user: currentMe
   };
   const uploadTask = uploadBytesResumable(storageRef, file, metadata);
-
+  const lgTime = new Date();
   const msg = document.getElementById("broadcast").value;
 //update database path for messages from text field
-set(db(database, "supporters/"), {
+set(db(database, "supporters/" + lgTime), {
   message: msg,
 })
   .then(() => {
@@ -166,6 +168,8 @@ set(db(database, "supporters/"), {
   // Register three observers:
   // 1. 'state_changed' observer, called any time the state changes
   // 2. Error observer, called on failure
+  
+  
   // 3. Completion observer, called on successful completion
   uploadTask.on(
     "state_changed",
@@ -173,13 +177,14 @@ set(db(database, "supporters/"), {
       // Observe state change events such as progress, pause, and resume
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      console.log("Upload is " + progress + "% done");
+      const uploadProgress = document.getElementById("uploads");
+      uploadProgress.innerHTML = "⏳Analysing image";
       switch (snapshot.state) {
         case "paused":
-          console.log("Upload is paused");
+          uploadProgress.innerHTML = "Uploading: "+ progress + "% done " + "<button>Resume</button>";
           break;
         case "running":
-          console.log("Upload is running");
+          uploadProgress.innerHTML = "Uploading: "+ progress + "% done " + "<button>Pause</button>";
           break;
       }
     },
@@ -204,8 +209,6 @@ set(db(database, "supporters/"), {
 });
 
 
-
-// Function to upload message to Realtime Dat
 self.addEventListener("activate", (event) => {
   event.waitUntil(clients.claim());
 });

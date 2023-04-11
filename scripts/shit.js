@@ -97,7 +97,7 @@ function question() {
 }
 
 function act() {
-  alert("Choose a room to choose your own lifestyle");
+  alert("Choose a payment method");
 }
 
 function buildTrust() {
@@ -108,4 +108,22 @@ function importantMessage() {
   alert(
     "As you know Ukrain is in trouble and parts of this website relies on their technology, so please upgrade your tier to support Ukrain or carry seeds in your pocket"
   );
+}
+
+function orangeM() {
+  alert("Dial *145# on your phone and call, choose option 2 and enter your orange money secret code. enter 72293757 as the beneficiary. add the amount to send and finish the transaction, grab a screenshot of the transaction and upload it.");
+}
+
+function smega() {
+  alert("Dial *173# on your phone and call, follow the prompts & enter 73069096 as the beneficiary. add the amount right amount to send and finish the transaction, grab a screenshot of the transaction and upload it.");
+}
+
+function crypto() {
+  document.getElementById("dogecoinlg").style.display = "none";
+  document.getElementById("dogecoinAdrr").style.display = "block";
+}
+
+function hideDoge() {
+  document.getElementById("dogecoinAdrr").style.display = "none";
+  document.getElementById("dogecoinlg").style.display = "block";
 }
