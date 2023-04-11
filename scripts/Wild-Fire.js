@@ -122,7 +122,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../../../index.html");
+          window.location.replace("../star/free/console.html");
         })
         .catch((error) => {
           // The write failed...

@@ -165,7 +165,7 @@ updateCloud.addEventListener("click", (g) => {
 
   const msg = document.getElementById("broadcast").value;
 //update database path for messages from text field
-set(db(database, "users/"), {
+set(db(database, "supporters/"), {
   message: msg,
 })
   .then(() => {
