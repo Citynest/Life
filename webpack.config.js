@@ -2,11 +2,15 @@ const path = require('path');
 
 module.exports = {
   mode: 'production', // specify mode as 'production'
-  entry: './scripts/1.js',
+  entry: {
+    main: './scrips/1.js',
+    pillar: './scripts/Wild-Fire.js',
+    support: './scripts/spark.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     crossOriginLoading: 'anonymous',
-    filename: 'PRO_bundle.js'
+    filename: '[name]_PRObundle.js'
   }
 };
 
