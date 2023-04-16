@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
+    <title>Authentication space</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJVFF9B');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><link
@@ -8,21 +16,27 @@
     type="image/x-icon"
     href="../../styles/imgs/CityNest-lg.com.png"
   />
-    <link rel="stylesheet" href="../styles/auth.css"> 
-    <title>Authentication space</title>
+    <link rel="stylesheet" href="../styles/auth.css">
+    
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdD4JElAAAAAORxtfP9n2BG8SUOwcMM9YH_ZL40"></script>
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJVFF9B"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
     <!--- Login section --->
     <div class="container">
         <form class="login-form" name="form">
             <h1>Login to continue</h1>
-            <p>Avatar ID</p>
 
             <!--- Avatar & secretKey fields here --->
-            <input type="text" name="avatar" id="avatar" placeholder="Email" autocomplete="email" required>
-            <p>Secret Key</p>
-            <input type="password" name="secretKey" id="secretKey" placeholder="Password" autocomplete="current-password" required>
+            <input type="text" id="avatar" placeholder="Email" autocomplete="email" required>
+            <br><br>
+            <input type="password" id="secretKey" placeholder="Password" autocomplete="current-password" required>
 
             <button type="button" id="submitLogin" class="mouse-cursor-gradient-tracking">Enter</button>
             </button><br><a onclick="thenewcallout3()" href="#">Reset my secret key</a>
@@ -38,24 +52,25 @@
 
 
             <!----Email & password registration fields here ---->
-            <input type="text" name="Name" id="1stName" placeholder="Name" required><br><br>
-            <input type="email" name="Avatar" placeholder="Avatar ID" id="email" autocomplete="email" required><br><br>
-            <input type="number" name="number" id="phoneNumber" placeholder="Phone number" required>
+            <input type="text" id="1stName" placeholder="Name" required><br><br>
+            <input type="email" placeholder="Email" id="email" autocomplete="email" required><br><br>
+            <input type="number" id="phoneNumber" placeholder="Phone number" required>
             <p>Create a new password</p>
-            <input type="password" id="omang" name="practiceKey" placeholder="**ID number** Secret key" required min="9"><br><br>
-            <input type="password" required name="password" placeholder="Repeat your **ID number** secret key" id="password" autocomplete="new-password" minlength="9"><br><br>
+            <input type="password" id="omang"  placeholder="**ID number**" required minlength="9"><br><br>
+            <input type="password" required placeholder="Repeat your **ID number**" id="password" autocomplete="new-password" minlength="9"><br><br>
             <p id="up">I accept that my privacy & actions online are my responsibility not CityNest 
-                & I promise to not spam or harm anyone in CityNest</p><input type="checkbox">
-            <button class="mouse-cursor-gradient-tracking" id="submitData" name="submitData">Join</button> <a href="#" onclick="thenewcallout()">Login instead</a><br><br>
+                & I promise to not spam or harm anyone in CityNest</p><input type="checkbox" onclick="recapture()" id="recap">
+            <button class="mouse-cursor-gradient-tracking" id="submitData">Join</button> 
+            <a href="#" onclick="thenewcallout()">Login instead</a><br><br>
         </div>
     </div>
 
     <!---- Account reset section ---->
     <div class="fixAcc">
         <h1>Password reset</h1>
-        <input name="email" placeholder="Enter your Avatar ID" autocomplete="email" id="recov_email" required><br>
+        <input placeholder="Enter your Avatar ID" autocomplete="email" id="recov_email" required><br>
         <br>
-        <button name="submitReset" class="mouse-cursor-gradient-tracking" id="submitReset">Request new key</button>
+        <button class="mouse-cursor-gradient-tracking" id="submitReset">Request new key</button>
         <a href="#" onclick="window.location.reload()">Reset session</a>
     </div>
     </form>
@@ -103,7 +118,7 @@
     <script src="../scripts/Wild-Fire.js" type="module"></script>
 
     <!--- Firebase Devmode
-    <script src="../Devs/Dev2.0.js" type="module"></script> --->
+    <script src="../Devs/Dev2.0.js" type="module"></script>---> 
     <script src="../dist/firebundle.js"></script>
 </body>
 </html>

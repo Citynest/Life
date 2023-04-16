@@ -63,7 +63,7 @@ submitData.addEventListener("click", (a) => {
                 alert(
                   "Verify your email address: " +
                   email +
-                  "(check your email spam folder)"
+                  " (check your email spam folder)"
                 );
                 console.log(user);
               }

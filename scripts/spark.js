@@ -39,7 +39,7 @@ const endSession = document.getElementById("killSwitch");
 endSession.addEventListener("click", (f) => {
   f.preventDefault();
   auth.signOut().then(() => {
-    window.location.replace("../../Index.html");
+    window.location.replace("../../index.html");
   });
 });
 

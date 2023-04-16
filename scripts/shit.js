@@ -127,3 +127,16 @@ function hideDoge() {
   document.getElementById("dogecoinAdrr").style.display = "none";
   document.getElementById("dogecoinlg").style.display = "block";
 }
+
+
+const vanish = document.getElementById("submitData");
+vanish.style.display = "none";
+function recapture() {
+const checkBox = document.getElementById("recap");
+  if (checkBox.checked == false){
+    return false;
+  } else {
+    vanish.style.display = "block";
+    return true;
+  }; 
+};
