@@ -63,7 +63,7 @@ submitData.addEventListener("click", (a) => {
                 alert(
                   "Verify your email address: " +
                   email +
-                  " (check your email spam folder)"
+                  " (check your email junk/spam folder)"
                 );
                 console.log(user);
               }
@@ -91,12 +91,10 @@ submitLogin.addEventListener("click", (b) => {
     .then((userCredential) => {
       // logged in
       const user = userCredential.user.uid;
-      const databaseOrganiser = "<<==================================>>";
       const lgdate = new Date();
 
-      update(ref(database, "users/" + user.uid), {
+      update(ref(database, "users/" + user), {
         Last_login: lgdate,
-        styler: databaseOrganiser,
       })
         .then(() => {
           // Data saved successfully!
