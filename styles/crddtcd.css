@@ -31,6 +31,13 @@ body {
     padding: 5px;
     border: 1px solid #ccc;
   }
+
+  
+  input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
   
   input[type="text"]:focus {
     border-color: #0099ff;
