@@ -97,4 +97,33 @@ nav {
 	background-color: white;
 	color: #333;
   }
+
+  #search {
+	float: right;
+	display: none;
+  }
+
+  .cards {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	width: 20%;
+	border-radius: 10px;
+  }
   
+  .cards:hover {
+	box-shadow: 0 8px 16px 0 rgba(35, 7, 112, 0.795);
+  }
+  
+  .container {
+	padding: 2px 16px;
+  }
+
+  #widgets a {
+	text-decoration: none;
+	color: black;
+  }
+
+  button {
+	background: linear-gradient(to bottom, #000000, #8f146a);
+	color: white;
+  }

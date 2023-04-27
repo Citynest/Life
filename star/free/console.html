@@ -25,7 +25,7 @@
     
   <link rel="icon" type="image/x-icon" href="../../styles/imgs/CityNest-lg.com.png"/>
   </head>
-  <body>
+  <body onload="updateAlert()">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJVFF9B"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -41,7 +41,7 @@
             height="5px"/>Console</a></li>
           <li><a href="main.html">Products & services</a></li>
           <li><a href="aboutUs.html">About</a></li>
-          <li><a href="#" id="killSwitch">Logout</a></li>
+          <li><a href="#" id="killSwitch">Logout</a></li><input type="text" id="search" placeholder="Ask anything">
         </ul>
       </nav>
     </header>
@@ -69,10 +69,22 @@
 
     <section style="display: none;" id="widgets">
       <center>
-        <h1>Citynest user apps</h1>
-        <p><button onclick="featureDelay()"><img src="" alt="Andile's patient management system" width="250px" height="150px">Andile ~ PMS</button>
-        <button onclick="featureDelay()"><img src="" alt="Cliff's lodge booking" width="250px" height="150px">Cliff ~ Lodge booking</button></p>
-        <button onclick="hideWidgets()">Back</button>
+        <h1>Upcoming updates (Yr3 Sm2)</h1>
+        <p>Visit CityNest partners</p>
+        <a href="#" onclick="featureDelay()"><div class="cards">
+          <img src="" alt=""><div class="container">
+            <h4><b>Andile</b></h4>
+            <p>Patient management system</p>
+          </div>
+        </div></a><br>
+
+        <a href="#" onclick="featureDelay()"><div class="cards">
+          <img src="" alt=""><div class="container">
+            <h4><b>Cliff</b></h4>
+            <p>Lodge Booking</p>
+          </div>
+        </div></a><br>
+        <button onclick="hideWidgets()">Back</button> <button onclick="featureDelay()">Link my organisation with CityNest</button>
       </center>
     </section>
     <script src="../../scripts/shit.js"></script>

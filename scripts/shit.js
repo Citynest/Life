@@ -143,10 +143,11 @@ const checkBox = document.getElementById("recap");
 
 function showWidgets() {
   document.querySelector(".console-section").style.display = "none";
+  document.getElementById("search").style.display = "block";
 
   
   let console = document.getElementById("consoleTitle");
-  console.innerHTML = "Other apps";
+  console.innerHTML = "Other apps (beta)";
 
   document.getElementById("widgets").style.display = "block";
 }
@@ -157,10 +158,15 @@ function featureDelay() {
 
 function hideWidgets() {
   document.querySelector(".console-section").style.display = "block";
+  document.getElementById("search").style.display = "none";
 
   
   let console = document.getElementById("consoleTitle");
   console.innerHTML = "Console";
 
   document.getElementById("widgets").style.display = "none";
+}
+
+function updateAlert() {
+  alert("The console just got updated! More apps from our partners are being developed😋, click console");
 }
