@@ -140,3 +140,27 @@ const checkBox = document.getElementById("recap");
     return true;
   }; 
 };
+
+function showWidgets() {
+  document.querySelector(".console-section").style.display = "none";
+
+  
+  let console = document.getElementById("consoleTitle");
+  console.innerHTML = "Other apps";
+
+  document.getElementById("widgets").style.display = "block";
+}
+
+function featureDelay() {
+  alert("Coming soon...");
+}
+
+function hideWidgets() {
+  document.querySelector(".console-section").style.display = "block";
+
+  
+  let console = document.getElementById("consoleTitle");
+  console.innerHTML = "Console";
+
+  document.getElementById("widgets").style.display = "none";
+}
