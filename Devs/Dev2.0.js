@@ -1,5 +1,5 @@
 // Import the functions I need from the SDKs you need
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js';
 
 import {
   getAuth,
@@ -11,7 +11,7 @@ import {
   browserSessionPersistence,
   sendPasswordResetEmail,
   connectAuthEmulator,
-} from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js';
+} from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js';
 
 import {
   getDatabase,
@@ -19,7 +19,7 @@ import {
   ref,
   update,
   connectDatabaseEmulator,
-} from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js';
+} from 'https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js';
 
 // My web app's Firebase configuration
 const firebaseConfig = {
@@ -124,7 +124,7 @@ submitLogin.addEventListener("click", (b) => {
             });
           };
           monitorAuthState();
-          window.location.replace("../star/free/console.html");
+          window.location.replace("../star/free/Lobby.html");
         })
         .catch((error) => {
           // The write failed...

@@ -12,6 +12,9 @@
         "text/plain": ["txt"],
         "application/json": ["json"],
         "application/wasm": ["wasm"]
-      }
+      },
+      "cSpell.ignoreWords": [
+        "Verif"
+      ]
     
 }

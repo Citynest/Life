@@ -1,31 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-TJVFF9B');</script>
+    <script src="../../scripts/gtag.js"></script>
     <!-- End Google Tag Manager -->
     <title>Citynest ~ Console</title>
     <link rel="stylesheet" href="../../styles/expiriments.css">
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin=""
-    />
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script
-      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-      crossorigin=""
-    ></script>
-    
   <link rel="icon" type="image/x-icon" href="../../styles/imgs/CityNest-lg.com.png"/>
   </head>
-  <body onload="updateAlert()">
+  <body onload="IpCapture()">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJVFF9B"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -35,7 +26,6 @@
       <h1 id="consoleTitle">My Tracker</h1>
     </header>
       <nav>
-        
         <ul>
           <li><a href="#" onclick="showWidgets()"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
             height="5px"/>Console</a></li>
@@ -45,11 +35,16 @@
         </ul>
       </nav>
     </header>
+
+    
     <!-- Subscription Details Section -->
     <section class="console-section">
-      <div id="map"></div>
+      
+      
+      <script src="../../scripts/KYC.js"></script>
       <p>Thank you for choosing our Internet security service. With our service, you can rest assured that your online activities are safe and secure. Here are the details of your subscription:</p>
       <ul>
+        <ul><div id="map"></div></ul>
         <li><strong>Subscription Plan:</strong> Free <a href="../banking.html"><button>get a 30 day VIP service trial now</button></a></li>
         <li><strong>Subscription Start Date:</strong> May 1, 2023</li>
         <li><strong>Subscription End Date:</strong> April 30, 2024</li>
@@ -67,26 +62,35 @@
       </ul>
     </section>
 
+    <!---Hidden apps (BETA)-->
     <section style="display: none;" id="widgets">
       <center>
         <h1>Upcoming updates (Yr3 Sm2)</h1>
         <p>Visit CityNest partners</p>
         <a href="#" onclick="featureDelay()"><div class="cards">
           <img src="" alt=""><div class="container">
-            <h4><b>Andile</b></h4>
-            <p>Patient management system</p>
+            <h4><b>Patient management system</b></h4>
+            <p>Andile</p>
           </div>
-        </div></a><br>
+        </div></a>
 
         <a href="#" onclick="featureDelay()"><div class="cards">
           <img src="" alt=""><div class="container">
-            <h4><b>Cliff</b></h4>
-            <p>ETC Booking</p>
+            <h4><b>ETC Booking</b></h4>
+            <p>Cliff</p>
+          </div>
+        </div></a>
+
+        <a href="./test1.html"><div class="cards">
+          <img src="../../styles/imgs/bw.jpg" alt="" style="height: 200px; width: 230px;"><div class="container">
+            <h4><b>ConnectBots</b></h4>
+            <p>System</p>
           </div>
         </div></a><br>
         <button onclick="hideWidgets()">Back</button> <button onclick="featureDelay()">Link my organisation with CityNest</button>
       </center>
     </section>
+
     <script src="../../scripts/shit.js"></script>
      <!---firebase production mode--->
  <script src="../../scripts/spark.js" type="module"></script>

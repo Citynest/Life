@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../../styles/imgs/CityNest-lg.com.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join ~ ConnectBots</title>
+    <link rel="stylesheet" href="../../styles/KYC.css">
+</head>
+<body>
+    <section id="about">
+        <center>
+            <h1>About ConnectBots</h1>
+            <p><strong>Project Overview:</strong>
+            
+            ConnectBots is an innovative platform aimed at revolutionizing the delivery, payment, and transportation systems in Botswana. We are building an all-in-one web application that connects users with local stores, offers a unified payment system, facilitates e-commerce for local products like beef and diamonds, manages transportation routes, and provides job opportunities for vehicle owners. Our mission is to enhance convenience, efficiency, and economic opportunities for the people of Botswana.<br><br>
+            
+            <strong>Developer Account Fee:</strong>
+            
+            To ensure the security and commitment of developers contributing to the ConnectBots platform, we require a one-time developer account fee of P500 via Orange Money. This fee will grant you access to a ConnectBots developer account, allowing you to contribute to the project and earn compensation for commendable efforts. 
+            Please note that this fee is non-refundable.<br><br>
+            
+            Please submit the P500 developer account fee via Orange Money to [+26772293757].
+            
+            Once you have made the payment, please click the <strong>NEXT</strong> button to continue with your developer account registration.<br><br>
+            
+            
+            </p>
+
+            <p>
+            <strong>Note: The developer account fee is required to ensure the commitment and security of developers on the platform. It helps us maintain a dedicated and trustworthy community of developers who are invested in the success of ConnectBots.</strong><br>
+            
+            Thank you for your interest in joining the ConnectBots development team! We look forward to collaborating with you on this exciting project.
+            
+            
+            Best regards to all candidates. <br><button onclick="back()">Previous</button><button onclick="checkEmail()"><strong>Next</strong></button></p>
+        </center>
+    </section>
+
+    <section class="effect1">
+        <center>
+            <form action="#">
+                <img src="../../styles/imgs/Coat.png" alt="coat of arms" width="130px" height="100px">
+            <h1>ConnectBots Developer Contribution Form</h1><br>
+        </center>
+            
+            <!---Switches-->
+            <div id="AcountInit">
+            <p>If you already have an existing personal account linked to Google just trigger the toggle to enable developer mode.
+                <label class="switch">
+                    <input type="checkbox" id="myToggle" value="OFF" disabled>
+                    <span class="slider"></span>
+                  </label>
+            </p>
+            </div>
+            <!---Auth dependencies-->
+        <div id="credentials">
+        <p>Name: <input type="text" id="pulse"></p>
+        <p>Email: <input type="email" id="primaryEmail"></p>
+        <p>ID number <input type="number" id="password"></p>
+        <p>Phone number <input type="number" id="directCall"></p>
+        </div><br>
+        
+        <p>Github username <input type="url" id="githublnk"></p>
+
+        <p>Please provide a brief introduction about yourself and your experience as a developer <input type="text" id="bio"></p>
+        
+
+        <p>How did you learn to know about the ConnectBots platform and its mission? <input type="text" id="netlinker"></p>
+        <p>Have you worked on similar projects or have experience with any of the technologies involved (HTML, CSS, JS, Firebase & Flutter)? <input type="text" id="interest"></p>
+        <p>How would you like to contribute to the ConnectBots platform? (Please check all that apply)</p><br>
+        
+        <p>Other (please specify)<input type="text" placeholder="Example: Spelling check, friend referrals & or donations" id="roles"></p>
+        
+        
+        <p>Front-end development (HTML, CSS, JavaScript)<input type="checkbox" id="coder"></p>
+        <p>Back-end development (Firebase)<input type="checkbox" id="exper-team"></p>
+        <p>UI/UX design (Flutter)<input type="checkbox" id="white-hacks"></p>
+        <p>Database management<input type="checkbox" id="auditors"></p>
+        <p>Testing and bug fixing<input type="checkbox" id="qualityOfService"></p>
+        </div>
+        <br>
+
+        
+        <p>How much time can you commit to the project on a weekly basis? <select id="workSchedule"><option value="1" selected>1hr</option>
+        <option value="3">3hrs</option>
+        <option value="6">6hrs</option>
+        <option value="8">8hrs</option>
+        <option value="10">10hrs</option>
+        <option value="14">14hrs</option>
+        <option value="16">16hrs</option>
+        <option value="20">20hrs</option>
+        <option value="24">1 day</option>
+        <option value="72">3 days</option></select></p>
+        
+
+        <p>Would you be interested in receiving compensation for your contributions if your efforts are commendable? 
+            (Please note that compensation is subject to evaluation and project budget availability) <select id="compensation">
+                <option value="notActive" selected></option><option value="Yes">Absolutely!</option>
+            <option value="No">No, I am an angel</option></select></p>
+
+        <p>If you opted to join the self compensation programme in the previous question, please provide your desired compensation 
+            or hourly rate and back it up with your academic qualifications/ CV/ Resume PDF <input type="number" id="hrlyR8"><input type="file" id="school-lvl"></p>
+        <br>
+
+        <p>Please note that ConnectBots is 100% remote & submitting this form does not guarantee your selection as a developer for 
+            the project. We will evaluate all applications and contact selected developers for further discussions. Best regards to all participants</p>
+        <br>
+    </div>
+          
+<!--Modal 2-->
+    <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            Dial <strong>*121#</strong> on your phone and select <strong>option 1</strong> using an Orange number with an Orange money account <br>
+            <br>
+            You will be prompted to enter your 4 digit secret Pin enter it and follow the prompts.
+            <br>The number to send the developer registration fee (P500) to is: <strong>72293757</strong>. please mind a service charge of P10 by the Orange network! <br>
+            <button id="trigger">Proceed with registration</button>
+      </div>
+      
+      </div>
+        <center><button id="myBtn">Next</button> <button id="demo">Payment instructions</button> <a href="../../index.html">Home</a><br>
+        <p><strong>Registration opens on: 01/07/23</strong></p></center>
+    </form>
+    </section>
+
+
+    <br>
+    
+<!-- Modal 1 -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        
+        
+      <strong>Note: The developer account fee is required to ensure the commitment and security of developers on the platform. It helps us maintain a dedicated and trustworthy community of developers who are invested in the success of ConnectBots.</strong><br><br>
+      
+      Thank you for your interest in joining the ConnectBots development team! We look forward to collaborating with you on this exciting project.
+      
+      
+      Good luck to all candidates. <br><br>
+      Please attach your developer account registration fee receipt/ screenshot
+      
+      <input type="file" id="reciepts" style="width: 60%;"><center><p><strong>Registration opens on: 01/07/23</strong></p><button id="telling" disabled>Submit Registration Form</button><br><div id="messageProgress"></div></center><br>
+  </div>
+  
+  </div>
+    <script src="../../scripts/KnowUrSelf.js"></script>
+    <script src="../../scripts/atBwflames.js" type="module"></script>
+</body>
+</html>

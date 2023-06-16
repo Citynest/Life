@@ -12,7 +12,7 @@
     ]
   },
   "storage": {
-    "rules": "N"
+    "rules": "storage.rules"
   },
   "emulators": {
     "auth": {
@@ -23,6 +23,13 @@
     },
     "ui": {
       "enabled": true
-    }
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "singleProjectMode": true
   }
 }
