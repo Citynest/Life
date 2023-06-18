@@ -8,7 +8,7 @@ import {
   sendEmailVerification,
   onAuthStateChanged,
   setPersistence,
-  browserSessionPersistence,
+  browserSessionPersistence, signInAnonymously,
   sendPasswordResetEmail
 } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js';
 
@@ -128,7 +128,7 @@ submitLogin.addEventListener("click", (b) => {
         });
     })
     .catch((error) => {
-      const errorCode = error.code;
+      const errorCode = error.message;
       alert(errorCode);
     });
 });
@@ -149,3 +149,19 @@ submitReset.addEventListener("click", (c) => {
       // ..
     });
 });
+
+ghost.addEventListener("click", (boo) => {
+signInAnonymously(auth)
+.then(() => {
+  // Signed in..
+  alert("You are loggin in anonymously, Ghosts get no love from me")
+  window.location.replace("../star/free/Lobby.html");
+})
+.catch((error) => {
+  const errorCode = error.code;
+  const errorMessage = error.message;
+  alert(errorMessage);
+  // ...
+});
+})
+

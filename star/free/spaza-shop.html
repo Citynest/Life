@@ -1,278 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online tuck Shop</title>
-    <link rel="stylesheet" href="../../styles/amazingSoup.css" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../../styles/imgs/CityNest-lg.com.png"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6205536631136975"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+<html>
+<head>
+  <!-- Google Tag Manager -->
+    <script src="../../scripts/gtag.js"></script>
+  <!-- End Google Tag Manager -->
+	<title>Citynest ~ Products & services</title>
+  <link rel="icon" type="image/x-icon" href="../../styles/imgs/CityNest-lg.com.png"/>
+	<link rel="stylesheet" type="text/css" href="../../styles/expiriments.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+		crossorigin="anonymous">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6205536631136975"
+		crossorigin="anonymous">
+	</script>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJVFF9B"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+	<header>
+		<h1>Merch Corner</h1>
+  </header>
+  <nav>
+        <ul>
+          <li><a href="Lobby.html">Console</a></li>
+          <li><a href="main.html"><img src="../../styles/imgs/online.png" alt="page online" width="5px"
+            height="5px"/>Switch to Main Store</a></li>
+          <li><a href="aboutUs.html">About</a></li>
+          <li><a href="#" id="killSwitch">Logout</a></li>
+        </ul>
+  </nav>
 
-  <body onload="spazaDisplay()">
-    <center>
-      <div id="screen1">
-      <h1>Welcome to the spaza shop</h1>
-      <h3>Great deals are coming your way! hang in there💖</h3>
-      <input type="text" placeholder="Wild search" id="scan" /><button
-        onclick="pageStatus()"
-      >
-        search
-      </button>
-      <p><button onclick="pageStatus()">My shopping cart</button></p>
-      <br /><br />
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height:280px;">
+  <div class="carousel-inner" style="padding-left: 10px; padding-right: 10px;">
+    <main class="carousel-item active">
+      <section>
+        <center>
+          <a href="../../styles/imgs/Products/Stripe-Shirt.jpg"><h1>Men's checked shirts</h1>
+          
+  <div class="limited-edition"><img src="../../styles/imgs/Products/Stripe-Shirt.jpg" alt="" height="320px"></div><br></a>
+          <strong>Free shipping around Gaborone</strong><br>
+          <input type="number" max="5" min="0" placeholder="1-5"><select name="" id="">
+            <option value="" selected disabled>size</option>
+            <option value="Small" disabled>Small</option>
+            <option value="Medium" disabled>Medium</option>
+            <option value="Large">Large</option>
+          </select>
+          <p id="true-Price"><div class="help-image">BWP270 ~ each<a href=""><img src="../../styles/imgs/help.png" alt="" height="12px">
+              <div class="popup-menu">
+                <p class="hidingLoggedOut"><a href="../../offline_VS_Online/auth.html">Sign in for a 22.22% discount! (-P60.00)</a></p>
+              </div></div></a></p>
+        </center>
+      </section>
+    </main>
 
-      <div>
-        <p>
-          TIP: Everything you buy/ acquire will show up in your inventory (money
-          goes to your wallet)
-        </p>
-        <p>Anything you need, we got it, if we dont someone in here has it!</p>
-        <p>
-          <a href="./travel.html"><button>
-            <img
-              src="../../styles/imgs/transport.jpg"
-              alt="Transportation"
-              width="220px"
-              height="150px"
-            /><br />Transportation
-          </button></a>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/shopping.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Clothes
-          </button></a>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/grocery.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Foods & toiletry
-          </button></a>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/Tech.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Gadgets
-          </button></a>
-        </p>
-        <p>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/furniture.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Furniture
-          </button></a>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/medicine.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Pharmacy
-          </button></a>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/data.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Internet bundles
-          </button></a>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/airtime.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Airtime
-          </button></a>
-        </p>
-        <p><a href="./my-vault2.0.html"><button>
-          <img
-            src="../../styles/imgs/banky.png"
-            alt=""
-            width="220px"
-            height="150px"
-          /><br />My vault
-        </button></a> <button onclick="pageStatus()">
-            <img
-              src="../../styles/imgs/donate.jpg"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />Buy a cup of coffee for me
-          </button>
-          <a href="../vendors/Botswana/Gaborone.html"><button>
-            <img
-              src="../../styles/imgs/tv-static.gif"
-              alt=""
-              width="220px"
-              height="150px"
-            /><br />TV & Streaming services
-          </button></a> <a href="../standard/class-Organiser.html"><button>
-            <img src="../../styles/imgs/baller.jpg" 
-            width="220px"
-            height="150px" alt="upgrade class" /></a
-          ><br />Upgrade class</button>
+  <div class="carousel-item">
+    <section id="online_offers">
+      <center>
+        <h1>Men's checked trousers</h1>
         
-        </p>
-        <h3>15% off weekend deal on all airtime purchases</h3>
-        <p>Applicable to some network providers<br><a href="https://forms.gle/eX5P4fpbug3N2U7w8"><button>Become a vendor</button></a></p>
-      </div></div>
+  <div class="limited-edition"><a href="../../styles/imgs/Products/Stripe-Trousers.jpg"><img src="../../styles/imgs/Products/Stripe-Trousers.jpg" alt="" height="320px"></div></a>
+  <div class="limited-edition"><a href="../../styles/imgs/Products/Stripe-T-back.jpg"><img src="../../styles/imgs/Products/Stripe-T-back.jpg" alt="" height="320px"></a></div><br>
+        <strong>Free shipping around Gaborone</strong><br>
+        <input type="number" max="5" min="0" placeholder="1-5"><select name="" id="">
+          <option value="" selected disabled>size</option>
+          <option value="Small" disabled>Small</option>
+          <option value="Medium" disabled>Medium</option>
+          <option value="Large">Large</option>
+        </select>
+        <p id="true-Price2"><div class="help-image">P585 ~ each<a href=""><img src="../../styles/imgs/help.png" alt="" height="12px">
+            <div class="popup-menu">
+              <p><a href="../../offline_VS_Online/auth.html">Sign in for a 14.53% discount! (-P85.00)</a></p>
+            </div></div></a></p>
+      </center>
+  </section>
+  </div>
+
+  <div class="carousel-item">
+    <section id="offline_offers">
+      <center>
+        <a href="../../styles/imgs/Products/OMW.jpg"><h1>On My Way 🏃‍♀️💨</h1>
+        
+  <div class="limited-edition"><img src="../../styles/imgs/Products/OMW.jpg" alt="" height="320px"></div><br></a>
+        <strong>Free shipping around Gaborone</strong><br>
+        <input type="number" max="1" min="0" placeholder="0-1">
+        <p id="true-Price3"><div class="help-image">P320 ~ each<a href=""><img src="../../styles/imgs/help.png" alt="" height="12px">
+            <div class="popup-menu">
+              <p><a href="../../offline_VS_Online/auth.html">Sign in for a 62.5% discount! (-P200.00)</a></p>
+            </div></div></a></p>
+  </center>
+    </section>
+  </div>
+
+  <div class="carousel-item">
+    <section id="starterbundles">
+      <center>
+        <a href="../../styles/imgs/Products/Black-Oud.jpg"><h1>Black-Oud🌠</h1>
+        
+  <div class="limited-edition"><img src="../../styles/imgs/Products/Black-Oud.jpg" alt="" height="320px"></div><br></a>
+        <strong>Free shipping around Gaborone</strong><br>
+        <input type="number" max="1" min="0" placeholder="0-1">
+        <p id="true-Price4"><div class="help-image">P320 ~ each<a href=""><img src="../../styles/imgs/help.png" alt="" height="12px">
+            <div class="popup-menu">
+              <p><a href="../../offline_VS_Online/auth.html">Sign in for a 62.5% discount! (-P200.00)</a></p>
+            </div></div></a></p>
     </center>
+    </section>
+  </div>
 
-    <center><div class="entertainment">
-      <h1>A little something for everyone</h1><br>
-      <h3>Here are a few suggestions to entertain yourself with</h3><br>
-      <p><a href="#" onclick="pageStatus()">
-          <img src="../../styles/imgs/musicLink.png" alt="Music" width="200px" height="200px"></a> <a href="#" onclick="pageStatus()">
-              <img src="../../styles/imgs/cinema.png" alt="Movies/ Series" width="200px" height="200px"></a> 
-              <a href="#" onclick="pageStatus()">
-                  <img src="../../styles/imgs/love.png" alt="Romance" width="200px" height="200px"></a>
-          <a href="#" onclick="pageStatus()">
-              <img src="../../styles/imgs/funtime.png" alt="Fun events" width="200px" height="200px"></a></p>
-              <p><a href="#" onclick="pageStatus()"><img src="../../styles/imgs/gameTime.png" alt="My games" width="200px" height="200px">
-              </a></p><br>
-              <p>Not enough for you? there are more exciting things to do in life</p>
-              <p>We are still gathering them for you hang tight...</p>
-  </div></center>
+  <div class="carousel-item">
+    <section id="probundles">
+      <center>
+        <a href="../../styles/imgs/Products/Ber-Berry.jpg"><h1>Ber-Berry</h1>
+          <div class="limited-edition"><img src="../../styles/imgs/Products/Ber-Berry.jpg" alt="" height="320px"></div><br></a>
+        <strong>Free shipping around Gaborone</strong><br>
+        <input type="number" max="1" min="0" placeholder="0-1">
+        <p id="true-Price5"><div class="help-image">P320<a href=""><img src="../../styles/imgs/help.png" alt="" height="12px">
+            <div class="popup-menu">
+              <p><a href="../../offline_VS_Online/auth.html">Sign in for a 62.5% discount! (P200.00)</a></p>
+            </div></div></a></p>
+    </center>
+    </section>
+  </div>
 
-    <!---Portal--->
-    <nav class="menu">
-      <header>Free room <span>[X]</span></header>
-      <ol>
-        <li class="menu-item">
-          <a href="../standard/serviceAccount.html"><img
-              src="../../styles/imgs/user.png"
-              alt="up"
-              width="25px"
-              height="25px"
-              /><span id="userDisplay">Spaza shop🛍️</span></a
-          >
-        </li>
-        <li class="menu-item">
-          <a href="#" onclick="history.back()"
-            ><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Go back</a
-          >
-        </li>
-        <li class="menu-item">
-          <a href="./main.html"
-            ><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Home</a
-          >
-          <ol class="sub-menu">
-            <li class="menu-item">
-              <a href="#" onclick="screenRestore()"
-                ><img
-                  src="../../styles/imgs/online.png"
-                  alt="page online"
-                  width="5px"
-                  height="5px"
-                />You're here</a
-              >
-            </li>
-            <li class="menu-item">
-              <a href="#" onclick="entertainment()"><img
-                src="../../styles/imgs/online.png"
-                alt="page online"
-                width="5px"
-                height="5px"
-              />Entertainment<img
-              src="../../styles/imgs/locked.png"
-              alt="page locked"
-              width="17px"
-              height="15px"
-            /></a>
-            </li>
-            <li class="menu-item">
-              <a href="#" onclick="pageStatus()">Productivity<img
-                src="../../styles/imgs/locked.png"
-                alt="page locked"
-                width="17px"
-                height="15px"
-              /></a>
-            </li>
-          </ol>
-        </li>
-        <li>
-          <a href="#" id="killSwitch"
-            ><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Sign out</a
-          >
-        </li>
-        <li class="menu-item">
-          <a href="./sponsors.html"
-            ><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Sponsors</a
-          >
-        </li>
-        <ol class="sub-menu">
-          <li class="menu-item">
-            <a href="../standard/class-Organiser.html"><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Upgrade class</a>
-          </li>
-        </ol>
-        <li>
-          <a href="../standard/Kevin.html"
-            ><img
-              src="../../styles/imgs/online.png"
-              alt="page online"
-              width="5px"
-              height="5px"
-            />Talk to the developer</a
-          >
-        </li>
-      </ol>
-      <footer><button aria-label="Toggle Menu">Toggle</button></footer>
-    </nav>
+  
+  <div class="carousel-item">
+    <section id="cantTouchdis">
+      <center>
+        <a href="../../styles/imgs/Products/Gloves-Pink.jpg"><h1>Classy Pink Gloves</h1>
+          <div class="limited-edition"><img src="../../styles/imgs/Products/Gloves-Pink.jpg" alt="" height="320px"></div><br></a>
+        <strong>Free shipping around Gaborone</strong><br>
+        <input type="number" max="1" min="0" placeholder="0-1">
+        <p id="true-Price6"><div class="help-image">P250<a href=""><img src="../../styles/imgs/help.png" alt="" height="12px">
+            <div class="popup-menu">
+              <p><a href="../../offline_VS_Online/auth.html">Sign in for a 60% discount! (-P150.00)</a></p>
+            </div></div></a></p>
+      </center>
+    </section>
+  </div>
+</div><br>
 
-    <script src="../../scripts/1.js"></script>
-    <script src="../../scripts/2.js"></script>
-    <script src="../../scripts/shit.js"></script>
+<section id="feature_requests">
+  <center><h1>Contact Me</h1>
+  <p><a href="#" onclick="orangeM()"><img src="../../styles/imgs/Orange-Money-logo.png" alt="orange money" width="80px" height=""></a>
+    <a href="#" onclick="smega()"><img src="../../styles/imgs/smega.png" alt="" width="80px" height=""></a>
+    <a href="../banking.html"><img src="../../styles/imgs/visa-mastercard-logos.jpg" alt="" width="80px" height=""></a>
+    <a href="#" onclick="crypto()"><img src="../../styles/imgs/Dogecoin_Logo.png" alt="dogecoin" width="80px" height="" id="dogecoinlg"></a><a href="#" onclick="hideDoge()"><img src="../../styles/imgs/dogecoin_address.png" style="display: none;" alt="Scan Dogecoin code" width="300px" height="210px" id="dogecoinAdrr"></a></p>
+        <p>===============================</p>
+      </center>
+  <form>
+    <p>Email: <h3 id="userDisplay"></h3></p>
+    <label for="message">Message:</label>
+    <textarea id="broadcast" name="message" placeholder="Specify your product/ bundle of choice"></textarea>
+    <br>
+            <p>
+                Add your reciept image
+                <input
+                  type="file"
+                  accept="image/*"
+                  onchange="loadFile(event)"
+                  id="profileView"
+                /><div id="uploads"></div><br />
+                <img id="output" height="150px" width="220px" alt="preview" />
+                <script>
+                  var loadFile = function (event) {
+                    var output = document.getElementById("output");
+                    output.src = URL.createObjectURL(event.target.files[0]);
+                    output.onload = function () {
+                      // URL.revokeObjectURL(output.src);  free memory
+                    };
+                  };
+                  
+                </script>
+              </p>
+    <input id="updateCloud" type="submit" value="Submit">
+  </form>
+  </section>
+  <script>
+  const rules = document.getElementById("broadcast");
+  const submitButton = document.getElementById("updateCloud");
 
-    <!--- Firebase --->
-    <script src="../../scripts/rebirth.js" type="module"></script>
+  rules.addEventListener("input", () => {
+  if(rules.value.trim() === "") {
+    submitButton.disabled == true;
+  } else {
+      submitButton.disabled = false;
+  }
+});
+  </script>
+  <footer>
+		<p>&copy; 2023 CyberLord. All rights reserved.</p>
+	</footer>
 
-    <!--- Firebase Devmode
-    <script src="../../scripts/hospitalBay.js" type="module"></script> --->
-  </body>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+  </a>
+  </div>
+
+
+	
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <!---firebase production mode--->
+ <script src="../../scripts/spark.js" type="module"></script>
+
+ <!---firebase Dev mode
+   <script src="../../scripts/hospitalBay.js" type="module"></script>--->
+      
+</body>
 </html>

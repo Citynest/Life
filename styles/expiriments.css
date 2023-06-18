@@ -127,3 +127,49 @@ nav {
 	background: linear-gradient(to bottom, #000000, #8f146a);
 	color: white;
   }
+
+  
+  .limited-edition {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .limited-edition::before {
+	content: "Limited Edition";
+	position: absolute;
+	top: 50px;
+	left: -10px;
+	background-color: #ff0000;
+	color: #ffffff;
+	padding: 5px;
+	transform: rotate(-30deg);
+	transform-origin: top left;
+  }
+  
+  .limited-edition img {
+	display: block;
+  }
+
+  .help-image {
+	position: relative;
+	display: inline-block;
+  }
+  
+  .help-image .popup-menu {
+	display: none;
+	position: absolute;
+	top: -10px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 999; /* Set a higher z-index value */
+  }
+  
+  .help-image:hover .popup-menu {
+	display: block;
+  }
