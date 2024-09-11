@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1069713958251",
+    "project_id": "eclipse-ice",
+    "storage_bucket": "eclipse-ice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069713958251:android:d7519d43f48340765a982e",
+        "android_client_info": {
+          "package_name": "com.eclipse.ice.ice"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVD4SeuH3IEYlNToy2jLeq8wCQtW-6ZIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069713958251:android:6a16e5e1442724da5a982e",
+        "android_client_info": {
+          "package_name": "com.skyconnect.io"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVD4SeuH3IEYlNToy2jLeq8wCQtW-6ZIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
