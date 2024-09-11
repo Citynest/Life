@@ -44,7 +44,7 @@ class _disndatState extends State<disndat> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Icy Deals',
+                  'SkyConnect',
                   style: TextStyle(
                     color: Colors.white, // Set text color to white
                     fontSize: 24,

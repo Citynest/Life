@@ -1,1 +1,57 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"eclipse-ice","appId":"1:1069713958251:android:d7519d43f48340765a982e","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"eclipse-ice","configurations":{"android":"1:1069713958251:android:d7519d43f48340765a982e","ios":"1:1069713958251:ios:44ef1fd5b8e3a19c5a982e","web":"1:1069713958251:web:ac6df97947693e355a982e","windows":"1:1069713958251:web:a614504a3cbebc385a982e"}}}}},"emulators":{"auth":{"port":1080},"firestore":{"port":1081},"ui":{"enabled":true},"singleProjectMode":true,"hosting":{"port":5000}},"firestore":{"rules":"firestore.rules","indexes":"firestore.indexes.json"},"hosting":{"public":"build/web","ignore":["firebase.json","**/.*","**/node_modules/**"],"rewrites":[{"source":"**","destination":"/index.html"}]}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "eclipse-ice",
+          "appId": "1:1069713958251:android:d7519d43f48340765a982e",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "eclipse-ice",
+          "configurations": {
+            "android": "1:1069713958251:android:d7519d43f48340765a982e",
+            "ios": "1:1069713958251:ios:44ef1fd5b8e3a19c5a982e",
+            "macos": "1:1069713958251:ios:44ef1fd5b8e3a19c5a982e",
+            "web": "1:1069713958251:web:ac6df97947693e355a982e"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "auth": {
+      "port": 1080
+    },
+    "firestore": {
+      "port": 1081
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true,
+    "hosting": {
+      "port": 5000
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

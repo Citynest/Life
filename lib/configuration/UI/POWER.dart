@@ -37,7 +37,7 @@ class _PowerState extends State<Power> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Godly\'s Touch'),
+        title: const Text('SkyConnect Home'),
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.white),

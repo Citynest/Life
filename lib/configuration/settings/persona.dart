@@ -12,6 +12,11 @@ class persona extends StatefulWidget {
 class _personaState extends State<persona> {
   DateTime? _selectedDate;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  int _currentIndex = 0;
+  bool _isMale = false;
+  bool _isLocal = false;
+
+// defining text controllers
   final List<TextEditingController> _controllers = [
     TextEditingController(), // Username
     TextEditingController(), // Name
@@ -30,14 +35,11 @@ class _personaState extends State<persona> {
     'Phone Number',
     'Referral',
   ];
-  int _currentIndex = 0;
-  bool _isMale = false;
-  bool _isLocal = false;
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Eclipse personament',
+      title: 'SkyConnect Registration',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         inputDecorationTheme: InputDecorationTheme(
@@ -136,6 +138,7 @@ class _personaState extends State<persona> {
           labelText: label,
         ),
         validator: (value) {
+          // handle Enter keyboard hit here
           if (value == null || value.isEmpty) {
             return 'Please enter your $label';
           }
@@ -149,13 +152,17 @@ class _personaState extends State<persona> {
     );
   }
 
+// Gender and Locality switches
   Widget _buildSpecialField(int index) {
     switch (index) {
       case 0:
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Gender:'),
+            const Text(
+              'Gender:',
+              style: TextStyle(color: Colors.white), // Set text color to white
+            ),
             Radio<bool>(
               value: true,
               groupValue: _isMale,
@@ -165,34 +172,48 @@ class _personaState extends State<persona> {
                 });
               },
             ),
-            const Text('Male'),
+            const Text(
+              'Male',
+              style: TextStyle(color: Colors.white), // Set text color to white
+            ),
             Radio<bool>(
               value: false,
               groupValue: _isMale,
               onChanged: (value) {
                 setState(() {
                   _isMale = value!;
+                  const TextStyle(color: Colors.white);
                 });
               },
             ),
-            const Text('Female'),
+            const Text(
+              'Female',
+              style: TextStyle(color: Colors.white),
+            ),
           ],
         );
       case 1:
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Locality:'),
+            const Text(
+              'Locality:',
+              style: TextStyle(color: Colors.white), // Set text color to white
+            ),
             Radio<bool>(
               value: true,
               groupValue: _isLocal,
               onChanged: (value) {
                 setState(() {
                   _isLocal = value!;
+                  const TextStyle(color: Colors.white);
                 });
               },
             ),
-            const Text('Local'),
+            const Text(
+              'Local',
+              style: TextStyle(color: Colors.white), // Set text color to white
+            ),
             Radio<bool>(
               value: false,
               groupValue: _isLocal,
@@ -202,18 +223,20 @@ class _personaState extends State<persona> {
                 });
               },
             ),
-            const Text('Foreigner'),
+            const Text(
+              'Foreigner',
+              style: TextStyle(color: Colors.white), // Set text color to white
+            ),
           ],
         );
       case 2:
         return Column(
           children: [
-            const Text('Birthdate:'),
             ElevatedButton(
               onPressed: _selectDate,
               child: Text(
                 _selectedDate == null
-                    ? 'Select Date'
+                    ? 'Select your birthdate'
                     : '${_selectedDate!.year}-${_selectedDate!.month}-${_selectedDate!.day}',
               ),
             ),
@@ -238,6 +261,7 @@ class _personaState extends State<persona> {
     }
   }
 
+// Validator
   void _nextField() {
     if (_formKey.currentState!.validate()) {
       if (_currentIndex < _labels.length + 2) {
@@ -258,6 +282,7 @@ class _personaState extends State<persona> {
     }
   }
 
+// Cloud submission
   void _submitForm() {
     if (_selectedDate != null) {
       final age = DateTime.now().year - _selectedDate!.year;

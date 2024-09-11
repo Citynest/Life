@@ -25,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         return windows;
       case TargetPlatform.linux:
@@ -78,6 +75,15 @@ class DefaultFirebaseOptions {
     authDomain: 'eclipse-ice.firebaseapp.com',
     storageBucket: 'eclipse-ice.appspot.com',
     measurementId: 'G-EP0PJ4TT28',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDRygF33ftAJscoQGWjeuA5iAkjwXaSAXw',
+    appId: '1:1069713958251:ios:44ef1fd5b8e3a19c5a982e',
+    messagingSenderId: '1069713958251',
+    projectId: 'eclipse-ice',
+    storageBucket: 'eclipse-ice.appspot.com',
+    iosBundleId: 'com.eclipse.ice.ice',
   );
 
 }
