@@ -1,7 +1,11 @@
 body {
-	font-family: Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #f0f0f0;
 	margin: 0;
-	padding: 0;
+	perspective: 800px;
 }
 
 header {
@@ -172,4 +176,67 @@ nav {
   
   .help-image:hover .popup-menu {
 	display: block;
+  }
+
+  
+
+ 
+.container {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
+	justify-content: center; /* Center the cards horizontally */
+  }
+  
+  .floating-card {
+	width: 250px;
+	background-color: white;
+	border-radius: 15px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+	padding: 20px;
+	transform-style: preserve-3d;
+	transition: transform 0.4s ease;
+	flex: 1 0 250px; /* Key for responsiveness */
+	margin-bottom: 20px; /* Add some margin between wrapped cards */
+  }
+  
+  .floating-card:hover {
+	transform: rotateX(5deg) rotateY(5deg) scale(1.02);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-content {
+	text-align: center;
+  }
+  
+  #card1 { background-color: #bbdefb; }
+  #card2 { background-color: #c8e6c9; }
+  #card3 { background-color: #ffcc80; }
+  
+  /* Bobbing animation */
+  .floating-card {
+	animation: bob 4s ease-in-out infinite;
+  }
+  
+  @keyframes bob {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-15px); }
+	100% { transform: translateY(0); }
+  }
+  
+  
+  /* Media queries for different screen sizes */
+  @media (max-width: 768px) { /* Tablet and smaller */
+	.floating-card {
+	  width: 200px; /* Slightly smaller cards */
+	  flex: 1 0 200px; /* Adjust flex basis */
+	}
+  }
+  
+  @media (max-width: 480px) { /* Phone and smaller */
+	.floating-card {
+	  width: 90%; /* Cards take up almost full width */
+	  flex: 1 0 90%; /* Adjust flex basis */
+	  margin-bottom: 20px; /* Ensure spacing between cards */
+	}
   }
