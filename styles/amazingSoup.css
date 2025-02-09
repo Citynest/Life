@@ -154,7 +154,7 @@ button p {
   transform: perspective(3000px) rotateY(-5deg);
 }
 
-#map { height: 310px; }
+#map { height: 400px; }
 
 
 /* =========================== Portal ===================== */

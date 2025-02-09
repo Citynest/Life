@@ -11,7 +11,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 L.marker([-24.629, 25.8854])
   .addTo(map)
   .bindPopup(
-    "Citynest-HQ is somewhere around here.<br>But what if we are everywhere!?"
+    "Something is cooking somewhere around here.<br>Come check it out!"
   )
   .openPopup();
 
