@@ -8,6 +8,18 @@
       type="image/x-icon"
       href="./styles/imgs/CityNest-lg.com.png"
     />
+    <script>
+      window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.innerWidth <= 768) { // Only apply on smaller screens
+        if (window.scrollY > 50) { // Show nav after scrolling down a bit
+            nav.classList.add('visible');
+        } else {
+            nav.classList.remove('visible');
+        }
+    }
+});
+    </script>
   </head>
   <body>
     <header>
@@ -26,12 +38,8 @@
     </header>
     <main>
       <section>
-        <h1>
-          Welcome to the Citynest Marketplace ~ Trust where needed most
-        </h1>
-        <br />
         <div class="container">
-          <div class="floating-card" id="card1"><center><h1>INTRO</h1></center> <div class="card-content"> 
+          <div class="floating-card" id="card1"><h1>Welcome to the Citynest Marketplace ~ Trust where needed most</h1> <div class="card-content"> 
             <p>
           Welcome to my platform! I offer a variety of services including
           storage, security, Internet subscriptions, livefeed, beauty products <strong>& more!</strong>. My goal is to provide a

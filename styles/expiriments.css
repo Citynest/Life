@@ -1,46 +1,195 @@
+/* General Styles */
 body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background-color: #f0f0f0;
-	margin: 0;
-	perspective: 800px;
+    font-family: 'Arial', sans-serif; /* Choose a modern font */
+    margin: 0;
+    background-color: #f4f4f4; /* Light background */
+    color: #333; /* Dark text color */
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    min-height: 100vh; /* Ensure body covers full viewport height */
 }
 
+/* Header Styles */
 header {
-	background-color: #333;
-	color: #fff;
-	padding: 20px;
+    background-color: #007bff; /* Blue header */
+    color: #fff;
+    padding: 20px;
+    text-align: center; /* Center the title */
 }
 
 header h1 {
-	margin: 0;
+    margin: 0;
+    font-size: 2rem;
 }
+
+/* Navigation Styles */
+/* ... (Existing CSS for header, main, footer, cards remains the same) ... */
+
+nav {
+    background-color: #343a40;
+    padding: 10px;
+    position: relative; /* Needed for absolute positioning on mobile */
+    z-index: 100; /* Ensure nav is above other content */
+    transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for smaller screens (mobile) */
+@media (max-width: 768px) {
+    nav {
+        position: fixed; /* Fixed positioning on mobile */
+        top: 0;
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Center horizontally */
+        width: 90%; /* Occupy most of the screen width */
+        background-color: rgba(52, 58, 64, 0.9); /* Semi-transparent background */
+        backdrop-filter: blur(5px); /* Add a blur effect (optional) */
+        padding: 10px;
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a shadow */
+        opacity: 0; /* Initially hidden */
+        pointer-events: none; /* Make it unclickable when hidden */
+    }
+
+    nav.visible { /* Class to show the nav */
+        opacity: 1;
+        pointer-events: auto; /* Make it clickable */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0; /* Adjust spacing between stacked items */
+    }
+}
+
+
+/* ... (header, nav, footer CSS remains the same) ... */
 
 main {
-	padding: 20px;
+    padding: 20px;
+    flex: 1;
+    overflow: hidden; /* Important for some animations */
 }
 
-section {
-	margin-bottom: 30px;
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    /* Add animation to the container */
+    animation: fadeInUp 1s ease-in-out forwards; /* Example animation */
 }
 
-h2 {
-	font-size: 24px;
-	margin-top: 0;
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Individual card animations (optional - see below) */
+    /* animation: cardSlideIn 0.8s ease-in-out forwards; */
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-li {
-	padding: 10px 0;
-	border-bottom: 1px solid #ccc;
+.card-image { /* ... (same as before) */ }
+.card-content { /* ... (same as before) */ }
+.card-title { /* ... (same as before) */ }
+.card-description { /* ... (same as before) */ }
+
+
+/* Animation 1: Fade In Up (for the container) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
+
+/* Animation 2: Slide In (for individual cards - optional) */
+@keyframes cardSlideIn {
+    from {
+        transform: translateX(-20px); /* Slide from the left */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animation 3: Scale Up (for individual cards - optional) */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation 4: Rotate In (for individual cards - optional) */
+@keyframes rotateIn {
+    from {
+        transform: rotate(-10deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* Add different animation delays for a staggered effect */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+/* ... and so on */
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+  /*index ends here*/
 
 form label {
 	display: block;
@@ -71,36 +220,6 @@ footer {
 	text-align: center;
 }
 
-
-nav {
-	background-color: #333;
-	color: white;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px;
-  }
-  
-  nav ul {
-	list-style: none;
-	display: flex;
-	margin: 0;
-  }
-  
-  nav ul li {
-	margin: 0 10px;
-  }
-  
-  nav ul li a {
-	color: white;
-	text-decoration: none;
-	padding: 5px;
-  }
-  
-  nav ul li a:hover {
-	background-color: white;
-	color: #333;
-  }
 
   #search {
 	float: right;
@@ -181,62 +300,3 @@ nav {
   
 
  
-.container {
-	display: flex;
-	gap: 20px;
-	flex-wrap: wrap; /* Allow cards to wrap onto multiple lines */
-	justify-content: center; /* Center the cards horizontally */
-  }
-  
-  .floating-card {
-	width: 250px;
-	background-color: white;
-	border-radius: 15px;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-	padding: 20px;
-	transform-style: preserve-3d;
-	transition: transform 0.4s ease;
-	flex: 1 0 250px; /* Key for responsiveness */
-	margin-bottom: 20px; /* Add some margin between wrapped cards */
-  }
-  
-  .floating-card:hover {
-	transform: rotateX(5deg) rotateY(5deg) scale(1.02);
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card-content {
-	text-align: center;
-  }
-  
-  #card1 { background-color: #bbdefb; }
-  #card2 { background-color: #c8e6c9; }
-  #card3 { background-color: #ffcc80; }
-  
-  /* Bobbing animation */
-  .floating-card {
-	animation: bob 4s ease-in-out infinite;
-  }
-  
-  @keyframes bob {
-	0% { transform: translateY(0); }
-	50% { transform: translateY(-15px); }
-	100% { transform: translateY(0); }
-  }
-  
-  
-  /* Media queries for different screen sizes */
-  @media (max-width: 768px) { /* Tablet and smaller */
-	.floating-card {
-	  width: 200px; /* Slightly smaller cards */
-	  flex: 1 0 200px; /* Adjust flex basis */
-	}
-  }
-  
-  @media (max-width: 480px) { /* Phone and smaller */
-	.floating-card {
-	  width: 90%; /* Cards take up almost full width */
-	  flex: 1 0 90%; /* Adjust flex basis */
-	  margin-bottom: 20px; /* Ensure spacing between cards */
-	}
-  }
