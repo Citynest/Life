@@ -92,6 +92,24 @@ nav a:hover {
 
 /* ... (header, nav, footer CSS remains the same) ... */
 
+/*Quickbit*/
+.pulse {
+	animation: pulse-effect 3s ease-in-out infinite; /* Adjust duration as needed */
+  }
+  
+  @keyframes pulse-effect {
+	0% {
+	  color: black; /* Initial text color */
+	}
+	50% {
+	  color: yellow; /* Flash yellow */
+	  text-shadow: 0 0 10px yellow; /* Optional glow effect */
+	}
+	100% {
+	  color: black; /* Return to black */
+	}
+  }
+
 main {
     padding: 20px;
     flex: 1;
